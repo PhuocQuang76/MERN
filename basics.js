@@ -132,5 +132,23 @@ let person1 = new Person("Alice", 35);
 person1.sayHello();
 
 
+//In JavaScript, a constructor function is used to create objects with a specific structure. 
+//In this example, Person is a constructor function that creates objects with name, age, and a sayHello method.
 
 
+console.log("\n----------------");
+console.log("Q6 Optional Question - what will the following code output? why?");
+//Optional Question - what will the following code output? why?
+
+var arr = [10, 12, 15, 21];
+for (var i = 0; i < arr.length; i++) {
+    
+  setTimeout(function() {
+    console.log('Index: ' + i + ', element: ' + arr[i]);
+  }, );
+}
+
+//The code above is how JS handle closures and the setTimeout.
+//The setTimeout function create a closure, and when the inner function is executed after the timout, it looks up the value of i.
+//However, by the time the inner function is executed, the loop has finished and the value of i is 4 (one more than the length of the array). 
+//As a result, arr[4] is undefined. This is why all the log statements output "Index: 4, element: undefined".
