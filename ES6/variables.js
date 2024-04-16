@@ -30,6 +30,8 @@ let User2 = {
 User = User2;
 console.log(User)
 
+/*
+
 //The setTimeout function creates a closure over the index variable,
 // and by the time the timeout fires, the loop has already completed and index is equal to 5.
 for(var index = 0; index < 5; index++){
@@ -129,14 +131,15 @@ console.log(person.name)
     User.session = "ES6 Variables" //updating the value of reference i.e. = session
     console.log(User)
 }
-
+*/
 
 //4. let and const get evaluated and not passed as reference as var 
 
+console.log("var outside: " + index1);
 for (var index = 1; index < 5; index++) {
-    
+    console.log("var: " + index);
     setTimeout(() => {
-        console.log("Incremented with 2 seconds delay " + index)    
+        console.log("Incremented with 1 seconds delay " + index)    
     }, 2000);
 }
 
@@ -144,9 +147,24 @@ console.log("Breaking Condition "+ index)
 
 
 for (let index1 = 0; index1 < 5; index1++) {
+    console.log("let: " + index);
     setTimeout(() => {
         console.log("Incremented with 2 seconds delay using let " + index1)    
     }, 2000);    
 }
 
+/*
+var index:
+
+The variable index is declared using var in the first for loop. Since var is function-scoped, the index variable will exist outside the loop.
+After the loop finishes, the value of index will be 5 because the loop increments index until it is no longer less than 5.
+The setTimeout functions inside the loop will all log the value of index as 5 because the loop has already completed by the time the functions are executed.
+let index1:
+
+The variable index1 is declared using let in the second for loop. let is block-scoped, so each iteration of the loop will have its own index1 variable.
+The setTimeout functions inside the loop will log the value of index1 for each iteration because let preserves the value of index1 at the time the setTimeout is scheduled.
+*/
+
 //console.log("Breaking Condition using let "+ index1)
+
+
