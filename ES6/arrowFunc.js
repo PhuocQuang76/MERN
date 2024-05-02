@@ -1,7 +1,6 @@
 
 // Arrow Function or FAT Arrow function or Lambda Expressions are ways to create functions with following benefits
 
-
 //1. Creates Shorter approach to write function
 
 
@@ -12,18 +11,15 @@ function Add(a, b) {
 
 // User.Details()
 // Add.call(User);
-//Add();
+// Add(); 
 
 
 
 () => {} //Arrow function
 
-
 let Func_Arrow = (a, b)=> a+b
 
-
 //console.log(Func_Arrow(5,9))
-
 
 let Func_Arrow_1 = (a = 0, b = 0)=> 
         {
@@ -87,6 +83,13 @@ var User = {
     GetUserInfo: function() {
         let age = 34;
         console.log(`User Info ${this.Name} and ${this.Address}`);
+
+        //The context of the arrow function person defined within the GetUserInfo method of the User object, 
+        //the this.age inside the arrow function will indeed refer to the age property of the parent User object.
+
+        //Because arrow functions do not have their own this context, they inherit the this value from the 
+        //surrounding code where they are defined. In this case, the surrounding code is the GetUserInfo method, 
+        //and the this inside the person arrow function will refer to the this value of the User object.
         person = () => {
             console.log(age);
             
@@ -100,3 +103,5 @@ var User = {
 };
 
 User.GetUserInfo();
+
+

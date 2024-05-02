@@ -67,7 +67,7 @@ let Student = {
 
 //let { Name = "Joe S", Session, Standard, Subject} = Student
 
-let { Name = "Joe S", Session, Standard, Subject : {Physics = 89, Chemistry = 120,Mathematics = 100, Language}} = Student
+let { Name = "Joe S", Session, Standard,  :Subject {Physics = 89, Chemistry = 120,Mathematics = 100, Language}} = Student
 
 console.log(Name)
 console.log(Session)
@@ -165,6 +165,7 @@ for(let index = 0; index < 5; index++){
 //In the second loop with var, the index1 variable is hoisted to the top of the function scope, so there is only one variable shared 
 //across all setTimeout callbacks. This results in all the setTimeout callbacks logging the final value of index1 after the loop has 
 //completed, which is 5 in this case.
+
 console.log("\n\n");
 for(var index1 = 0; index1 < 5; index1++){
     setTimeout(() => {

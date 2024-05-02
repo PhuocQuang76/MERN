@@ -1,0 +1,12 @@
+/*
+Express is a minimal and flexible Node.js web application framework that provides a robust set of features for
+ web and mobile applications. It is designed for building web applications and APIs.
+
+ Middleware support to handle requests
+Routing to define application endpoint
+Template engines to generate HTML
+Error handling for better debugging
+Static file serving
+Integrated support for cookies
+HTTP utility methods for handling requests and responses
+*/
