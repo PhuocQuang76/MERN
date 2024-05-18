@@ -1,0 +1,86 @@
+/* Header.css */
+.headerDiv{
+    background-color: lightslategray;
+    color:white;
+    padding-bottom: 10px;
+    padding: 2%;
+}
+
+.header-title {
+    color: blue;
+    font-size: 24px;
+}
+
+.button{
+    padding: 4px;
+    text-align: center;
+    font-weight: 400;
+    background-color: rgb(212, 210, 204);
+    /* border: 1px solid red; */
+    border-radius: 5%;
+    margin: 4px;
+    text-decoration: none;
+}
+
+.active{
+    background-color: aquamarine;
+}
+
+
+.bodyDiv{
+    padding: 2%;
+    background-color:rgb(232, 235, 226);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; Set the height of the viewport */
+    margin: 0;
+}
+
+
+
+/* Footer.css */
+
+.footerDiv{
+    padding: 2%;
+    background-color: lightslategray;
+    color:white;
+    text-align: center;
+}
+
+.inline {
+    display: inline;
+    margin-right: 10px; /* Adjust spacing between elements if needed */
+}
+
+
+.btn{
+    
+    font-size: small;
+    height: 30px;
+    width: 175px;
+    
+}
+
+.btn:hover{
+    font-size: small;
+    height: 30px;
+    width: 175px;
+    background-color: rgb(59, 92, 117);
+    font-style: italic;
+}
+
+
+#SignIn{
+    
+    background-color: lightblue;
+    padding: 20px;
+
+}
+#SignIn form {
+    margin-bottom: 20px;
+}
+
+#SignIn div {
+    text-align: center;
+}

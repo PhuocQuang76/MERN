@@ -1,0 +1,61 @@
+1) npm init
+2) install dependencies
+3) .babelrc,.gitignore, webpack.config.js, dist folder, html.index, html.js, App.js, App.css
+
+Answer question :
+//1. create a webpack setup, index html and one css file to show css in next questions
+
+//2. how react renders dom in conservative manner - explain
+Because React using Virtual DOM and a process which is called reconciliation.
+
+When any change occur in React component, 
+first Virtual DOM will be updated 
+then React will performs a process called reconciliation. React compares the previous virtual DOM 
+with the updated virtual DOM and identifies the minimal number of DOM manipulations needed to reflect the changes. 
+This approach allows React to optimize the rendering process by only updating the parts of the DOM that have actually changed, leading to improved performance and efficiency.
+
+//3. create a class component named - Success and show some quotes (messages) on success in it
+
+
+//4. create a functional component SuccessChild, make it child of Success and pass Name and Address to it from Success
+
+//5. create SuccessStory as another component, pass this as props in SuccessChild from Success component
+
+//6. create UserSignIn component using uncontrolled way, should be class component
+
+
+//7. explain how virtual dom works 
+The Virtual DOM in React is a lightweight copy of the actual DOM. When changes are made to a React component, React first updates the Virtual DOM instead of the actual DOM. Here is how the Virtual DOM works in React:
+
+1.Virtual DOM Creation: When a React component is rendered, a corresponding Virtual DOM representation is created. This Virtual DOM is a tree structure that mirrors the actual DOM.
+
+2.Updating the Virtual DOM: When changes are made to the component's state or props, React updates the Virtual DOM rather than the actual DOM. This update is fast because the Virtual DOM is a lightweight in-memory representation.
+
+3.Reconciliation: React then performs a process called reconciliation, where it compares the previous Virtual DOM with the updated Virtual DOM to determine the most efficient way to update the actual DOM.
+
+4.DOM Diffing: During reconciliation, React calculates the differences (diffing) between the previous Virtual DOM and the updated Virtual DOM. It identifies the minimal number of DOM manipulations needed to reflect the changes.
+
+5.Efficient DOM Updates: Based on the differences calculated during diffing, React updates the actual DOM with only the necessary changes. This selective updating of the DOM elements leads to improved performance and efficiency.
+
+6.Batching Updates: React may batch multiple updates together to minimize the number of DOM manipulations and optimize performance. This helps in avoiding unnecessary re-renders and ensures that the updates are processed efficiently.
+
+
+//8. pass a random value from SuccessStory component back to Success
+
+
+//9. Create a class component and show all the life cycle hooks/methods
+
+
+//10. Make a state change, the state should be duplicate and then stop it to call render method to improve efficiency.
+Look at the code at UserSignIn.js    
+
+shouldComponentUpdate(nextProps, nextState) {
+        if(nextState.refUsername !== this.state.refUsername || nextState.refPassword !== this.state.refPassword){
+            console.log("updated...")
+            return true;
+        }else{
+            return false;
+        }
+        // console.log("updated...")
+        // return nextState.refUsername !== this.state.refUsername || nextState.refPassword !== this.state.refPassword;
+}
