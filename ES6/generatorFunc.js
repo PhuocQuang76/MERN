@@ -9,15 +9,24 @@
 
 
 /*
-Generator functions are used when you want to create a function that can generate a sequence of values over time, rather than computing all the values at once and returning them as a single result. They provide a way to generate values on-demand, which can be useful in scenarios where you have a large amount of data or where you want to conserve memory.
+Generator functions are used when you want to create a function that can generate a sequence of values over time, 
+rather than computing all the values at once and returning them as a single result. They provide a way to 
+generate values on-demand, which can be useful in scenarios where you have a large amount of data or where 
+you want to conserve memory.
 
 Here are a few reasons why you might want to use a generator function:
 
-1) Efficient memory usage: Generator functions allow you to generate values one at a time, which can be more memory-efficient than generating all the values at once and storing them in memory. This is especially useful when dealing with large datasets or when you don't need to process all the data at once.
+1) Efficient memory usage: Generator functions allow you to generate values one at a time,
+ which can be more memory-efficient than generating all the values at once and storing them in memory. 
+ This is especially useful when dealing with large datasets or when you don't need to process all the data at once.
 
-2) Lazy evaluation: Generator functions allow you to defer the computation of values until they are actually needed. This is known as lazy evaluation or lazy evaluation of sequences. It can be beneficial when you have expensive computations or when you want to avoid unnecessary computations.
+2) Lazy evaluation: Generator functions allow you to defer the computation of values until they are 
+actually needed. This is known as lazy evaluation or lazy evaluation of sequences. It can be beneficial
+ when you have expensive computations or when you want to avoid unnecessary computations.
 
-3) Iteration control: Generator functions provide a way to control the iteration process by using the yield keyword. This allows you to control the flow of the iteration and return values at specific points. You can also use yield* to delegate the iteration to another generator function.1)
+3) Iteration control: Generator functions provide a way to control the iteration process by using the 
+yield keyword. This allows you to control the flow of the iteration and return values at specific points. 
+You can also use yield* to delegate the iteration to another generator function.1)
 
 In JavaScript, the yield keyword is used in a generator function to pause the function's execution and yield a value.
  When a generator function encounters a yield statement, it temporarily suspends its execution and returns an object 

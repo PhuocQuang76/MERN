@@ -1,3 +1,19 @@
+/*
+An async function is a special type of function in JavaScript that allows you to write asynchronous code in a more 
+synchronous-looking way. It is defined using the async keyword before the function keyword.
+
+When an async function is called, it returns a promise immediately. Inside the function body, you can use the
+ await keyword to pause the execution of the function until a promise is resolved or rejected. This allows you 
+ to write asynchronous code that looks and behaves more like synchronous code.
+
+ async function fetchUserData(userId) {
+  const response = await fetch(`/api/users/${userId}`);
+  const data = await response.json();
+  return data;
+}
+*/
+
+
 // async and await - to give us a synchronised behaviour of execution though executing asynchronously
 // if we create promise object inside async it will take it or if we dont create promise then it will wrap a promise object
 // async and await : //Async : A way to have multi-threading in javascript like other object oriented programming language

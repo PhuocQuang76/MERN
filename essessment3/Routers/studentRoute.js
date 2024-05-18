@@ -201,7 +201,7 @@ function* sumOddAndSumEven(num){
 }
 const returnResult = sumOddAndSumEven(5);
 
-console.log("Total sum of odd numbers from 1 to 5:", returnResult.next().done);
+console.log("Total sum of odd numbers from 1 to 5:", returnResult.next().value);
 console.log("Total sum of even numbers from 1 to 5:", returnResult.next().value);
     
 

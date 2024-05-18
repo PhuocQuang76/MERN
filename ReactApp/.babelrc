@@ -1,0 +1,23 @@
+{
+    "presets": [
+        "@babel/preset-env",
+        "@babel/preset-react"
+    ]
+ }
+
+
+ /*
+.babelrc file in your project allows you to customize and fine-tune how Babel transpiles 
+your modern JavaScript code into a more widely supported format, making it easier to
+ write modern JavaScript code while ensuring compatibility with older environments.
+
+ @babel/preset-env: This preset enables Babel to transform modern JavaScript code to be 
+ compatible with specific browser environments based on the configuration provided. 
+ It allows you to target specific versions of browsers or environments, ensuring that 
+ the generated code works across a wide range of targets.
+
+@babel/preset-react: This preset is used for transforming JSX syntax commonly used in React
+ applications into standard JavaScript that browsers can understand. It includes plugins
+  necessary for working with React components, JSX elements, and other React-specific 
+  features.
+ */etxe

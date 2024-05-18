@@ -156,7 +156,7 @@ const obj2 = {
         }.bind(this), 1000);
     }
 };
-obj2.greet(); //hi Alice
+obj2.greet(); //hi Alice2
 
 const obj3= {
     first: "Alice3",

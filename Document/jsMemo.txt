@@ -1,0 +1,779 @@
+https://github.com/MishraAshish/mernstack18
+https://github.com/MishraAshish/mernstack18/blob/master/readme.md
+
+*JAVASCRIPT
+	client side scripting langguage, interpreted, oojs(object oriebgtic javascript) , funtional , dynamic, typing, case sensitive, auto casting
+
+* run js file:
+	- node filename
+	* Variable: variable it is termed as variable initialization, can bedone at the time of declaration or later, by default undefined is assigned as a value.
+	* Let
+	the blcok scope restricts a variables access to the block in which it is declared. Unlike var, the keyword allowa thwe script to restrict access to the variable to the nearest enclosing blick.and ensure we dont have re-declaration of a variable.
+	*Const: 
+	The const declaration creates a read-only reference to a value. It does no mean the value it is immutable, just that the variable identifier cannot be reassigned.
+
+	Constants cannot be reassigned a value.// we can re assign thru ref
+
+	Constants are block-scoped
+
+	A constant cannot be re-declared.
+
+	A constant requires an initializer. Thus constants must be initialized at the time of its declared.
+
+	* Loop
+		***for … in loop => show the index
+		Ex: 	var arr = [3, 5, 7];
+			arr.foo = “hello”;
+			for (let i in arr) {
+			console.log(i);
+			// logs “0”, “1”, “2”, “foo”
+			}
+		*** for..;. of loop => iterate over proiperty namse:
+			var arr = [3, 5, 7];
+			for (let i of arr) {
+			console.log(i);
+
+			// logs “3”, “5”, “7”
+			//it is does not log “3”, “5”, “7”,”hello”
+			}
+
+	* Create object with variables we already have
+		This is some javascript syntax sugar.
+		It's a pretty common case to do something along the lines of:
+		const obj = {
+  		  a: a,
+ 		   b: b,
+ 		   c: c
+		};
+		where you are building an object out of variable you already have and keeping their same names. But 		you'll notice that you're having to write each variable name twice. So instead, you can write:
+		const obj = { a, b, c };
+		and it will be evaluated the same as the above code.
+
+	* Destructuring
+	The destructuring assignment syntax is a JavaScript expression that makes it
+possible to unpack values from arrays, or properties from objects, into distinct
+variables.
+
+Basic Assignments :
+
+var foo = ['one', 'two', 'three'];
+
+var [one, two, three] = foo;
+
+console.log(one); // "one"
+
+console.log(two); // "two"
+
+console.log(three); // "three"
+
+Assignment separate from declaration :
+
+var a, b;
+
+[a, b] = [1, 2];
+
+console.log(a); // 1
+
+console.log(b); // 2
+
+Default Values :
+
+var a, b;
+
+[a=5, b=7] = [1];
+
+console.log(a); // 1
+
+console.log(b); // 7
+
+Swapping variables :
+
+var a = 1; var b = 3;
+
+[a, b] = [b, a];
+
+console.log(a); // 3
+
+console.log(b); // 1
+
+Assigning rest of an array to a variable :
+
+var [a, ...b] = [1, 2, 3];
+
+console.log(a); // 1
+
+console.log(b); // [2, 3]
+//destructuring
+
+const student = {
+
+firstname: 'Glad',
+
+lastname: 'Chinda',
+
+country: 'Nigeria'
+
+};
+
+// Object Destructuring
+
+const { firstname, lastname, country } =
+student;
+console.log(firstname, lastname, country);
+// Glad Chinda Nigeria
+
+var [a, ...b,] = [1, 2, 3];
+
+// SyntaxError: rest element may not have
+a trailing comma
+
+//if a trailing comma is used on the
+left-hand side with a rest element
+
+
+* SPREAD and REST Syntax
+Spread syntax allows an iterable such as an array expression or string to be
+expanded in places where zero or more arguments (for function calls) or elements
+(for array literals) are expected, or an object expression to be expanded in places
+where zero or more key-value pairs (for object literals) are expected.
+function sum(x, y, z) {
+	return x + y + z;
+}
+
+const numbers = [1, 2, 3];
+
+console.log(sum(...numbers));// expected output: 6
+
+console.log(sum.apply(null, numbers));// expected output: 6
+
+*The rest parameter syntax allows us to represent an indefinite number of
+arguments as an array
+function sum(...theArgs) {
+	return theArgs.reduce((previous, current) => { return previous + current;});
+}
+console.log(sum(1, 2, 3));// expected output: 6
+
+console.log(sum(1, 2, 3, 4));// expected output: 10
+
+*Template Literals (strings)
+
+
+* Data Types
+	
+// Six data types are present in Javascript
+// Primitive Types (assinged as value)
+// String, Number, Boolean, Undefined, Null
+
+// Non-Primitive Types (assinged as reference)
+// Object
+
+//console.log(data_name1) //data_name1 is not defined : error
+
+console.log(data_name) // undefined - hoisting - (default value to variable in js)
+
+//var - is a keyword used in core-js to declare variables, function etc
+
+var data_name = "Learning MERNStack" //declare and assign value to the variable
+
+console.log(data_name);
+console.log("Data Type ", typeof data_name) //data type of data - string
+
+var data_name = "Learning Vanila Javascript" //re-declare and re-assign value to the variable
+data_name = "Learning Ecma Script basics" // re-assign value to the variable
+
+var data_name = 2024  //dynamically changes the type depending on the value assigned
+data_name = 20.24 //float
+
+console.log(data_name)
+console.log("Data Type ", typeof data_name) //data type of data - number
+
+var data_name = undefined
+
+console.log(data_name)
+console.log("Data Type ", typeof data_name) //data type of data - undefined
+
+data_name = null //data value
+
+console.log(data_name)
+console.log("Data Type ", typeof data_name) //data type of data - object
+
+data_name = {} //creating a object, json object, object literal
+
+console.log(data_name)
+console.log("Data Type ", typeof data_name)
+data_name = {
+    FirstName : "Hemant", 
+    Address : "Somewhere on earth"
+}
+
+console.log(data_name)
+console.log("Data Type ", typeof data_name) //data type of data - object
+
+data_name = null
+
+console.log(data_name)
+console.log("Data Type ", typeof data_name) 
+
+data_name = {
+    FirstName : "Mark", 
+    Address : "Somewhere in London"
+}
+
+data_name = 1 == 2//true // default value for bool is false
+
+console.log(data_name)
+console.log("Data Type ", typeof data_name) 
+
+// //empty object how js see this
+
+var emptyObj =  {"age":1} //obj1 // 213-address
+var emptyObj2 =  {"age":1} //obj1 // 214-address
+
+console.log("Data Type 1", typeof emptyObj2)
+data_name = emptyObj == emptyObj2 // ==> true 
+console.log(data_name)
+
+
+
+
+// //ES-6 : Symbol - (ES6 : class based implementation of JS)
+// // used to create customized variable of our choice
+var symbol_1 = Symbol("New Value of my choice")
+
+
+
+* Java Script is interpreter languagae
+
+**Using IIFEs in functions
+Immediately Invoked Function Expressions
+
+IIFEs can be used for different purposes. 
+1) One of the main uses of these functions is declaring global variables.
+2) It is also important to understand that IIFEs are functions themselves. The only difference is that they do not need to wait for invocation.
+3) Semicolons before IIFEs
+const greeting = "Hello world";
+(function () {
+  console.log(greeting);
+})()
+4)Named vs anonymous IIFEs
+You can name your IIFEs or leave them anonymous. Be aware that naming them does not mean that they will be invoked after they are executed. Naming can be useful, especially if you have several IIFEs that perform different operations close to each other.
+
+const greeting = "Hello world";
+
+(function myGreeting() {
+  console.log(greeting);
+})();
+https://github.com/MishraAshish/mernstack18
+
+5) The syntax is similar to JavaScript’s anonymous functions. You can also use the arrow function variation
+(() => {
+  //Your code goes here
+})(); mean:execute right away.
+
+6) with closures
+const friendlyFunction = (function () {
+  let greetCount = 0;
+  return function () {
+    console.log(`Hello ${greetCount}x`);
+    return greetCount++;
+  };
+})();
+
+friendlyFunction();
+friendlyFunction();
+friendlyFunction();
+
+n this code snippet, you define the IIFE and store it in a variable, friendlyFunction. As mentioned earlier, IIFEs are executed when they are defined. In this case though, the inner function is not executed until friendlyFunction() is called. If you comment out the function calls at the bottom, there will be no output on the console.
+The greetCount variable is private and accessible only in the IIFE. When invoking the function severally, the value of greetCount variable is persisted and incremented with each call. Without closure, the value would always be 0.
+Closures in IIFEs ensure that the global namespace is not polluted. That’s true even if you name your IIFE variables using the names of variables that exist in the global scope.
+
+
+*** CLOSURES
+Closure in JavaScript
+
+
+		
+		
+		
+Closures are a powerful and fundamental concept in JavaScript. They allow inner functions to access variables from their outer scope, even after the outer function has completed execution. In simpler terms, a closure “closes over” its lexical scope, preserving the variables and scope of the outer function. In this article, we’ll dive deep into closures, understand how they work, and explore practical examples.
+What is a Closure?
+A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). When you create a closure, you gain access to an outer function’s scope from an inner function. Closures are automatically created every time a function is defined in JavaScript.
+
+Lexical Scoping
+Lexical scoping refers to how a parser resolves variable names when functions are nested. The location where a variable is declared within the source code determines where that variable is available. Nested functions have access to variables declared in their outer scope. Consider the following example:
+Example 1: This example shows the basic use of closure.
+function foo(outer_arg) {
+
+    function inner(inner_arg) {
+        return outer_arg + inner_arg;
+    }
+    return inner;
+}
+let get_func_inner = foo(5);
+
+console.log(get_func_inner(4));
+console.log(get_func_inner(3));
+
+Closures (tạm dịch: bao đóng) cho phép lập trình viên Javascript viết mã tốt hơn. Chúng ta thường sử dụng closures trong Javascript, dù ít hay nhiều kinh nghiệm thì chúng ta vẫn sẽ bắt gặp nó lần này đến lần khác. Bài viết này sẽ giải thích cho những người chưa biết hoặc đang mơ hồ về khái niệm closures, một cách đơn giản và ngắn gọn.
+Bài viết này tương đối ngắn về closures trong Javascript. Bạn nên làm quen với khái niệm phạm vi biến (variable scope) trước khi đọc để dễ dàng nắm bắt hơn.
+Closure là gì ?
+Closure là một hàm mà có thể truy cập biến thuộc scope chứa nó (hàm closure), ngay cả khi scope chứa nó đã được thực thi xong. Cụ thể, closure có thể truy cập biến mà được khai báo trong hàm mà tạo ra closure đó, ngay cả khi hàm tạo ra nó đã hoàn tất việc thực thi.
+
+Closure được tạo ra khi một hàm được khai báo trong một hàm khác. Hàm bên trong có thể truy cập tất cả biến mà được khai báo ở hàm bên ngoài, ngay cả khi hàm bên ngoài đã hoàn thành việc thực thi.
+Ví dụ:
+function ham_ben_ngoai() {
+  var x = 10;
+
+  function ham_ben_trong() {
+    console.log(x); // 10
+  }
+
+  return ham_ben_trong;
+}
+
+let myFunc = ham_ben_ngoai();
+myFunc(); // 10
+
+Closure có 3 scope chain, đó là:
+	•	Có thể truy cập đến biến của chính nó (biến được định nghĩa trong dấu ngoặc nhọn của nó).
+	•	Có thể truy cập biến của hàm bên ngoài.
+	•	Có thể truy cập biến toàn cục (global).
+function a() {
+    var name = "I'm a Copy";
+    function b() { // Closure
+        console.log(name);
+    }
+}
+
+Hàm bên trong không chỉ truy cập được đến biến của hàm bên ngoài và còn sử dụng được các tham số của hàm bên ngoài nữa. Chú ý là hàm bên trong này không thể gọi object arguments của hàm bên ngoài, mặc dù nó có thể sử dụng các tham số của hàm bên ngoài một cách bình thường.
+Ta có thể tạo một closure bằng cách thêm một hàm bên trong một hàm khác.
+function showName (firstName, lastName) {
+
+    var nameIntro = "Your name is ";
+    
+    // Đây là hàm bên trong mà có thể truy cập đến biến của hàm bên ngoài, truy cập được tham số của hàm ngoài.
+    function makeFullName () {
+        return nameIntro + firstName + " " + lastName;
+    }
+    
+    return makeFullName ();
+}
+
+showName ("Michael", "Jackson"); // Your name is Michael Jackson
+
+Closures được sử dụng nhiều trong NodeJS; Nó có trong kiến truc non-blocking, bất đồng bộ của NọdeJS. Ngoài ra Closures cũng được sử dụng nhiều trong Jquery, ví dụ:
+$(function() {
+    var selections = []; 
+    $(".niners").click(function() { // Closure này có thể truy cập đến biến selections
+        selections.push (this.prop("name")); // cập nhật biến selections trong scope của hàm ngoài.
+    });
+});
+
+Các quy tắc của closures và Side Effects của nó:
+1. Closures có thể truy cập biến của hàm bên ngoài ngay cả hàm bên ngoài đã trả về:
+Một trong những "tính năng" hay ho quan trọng của closures đó là hàm bên trong vẫn có thể truy cập đến các biến số của hàm bên ngoài ngay cả khi hàm bên ngoài đã trả về. Khi các hàm trong Javascript thực thi, chúng sử dụng cùng scope chain. Điều này có nghĩa là sau khi hàm bên ngoài trả về, hàm bên trong vẫn có thể truy cập đến các biến của hàm bên ngoài. Do đó, ta có thể gọi hàm bên trong này trong chương trình sau đó. Ví dụ:
+function celebrityName (firstName) {
+    var nameIntro = "This celebrity is ";
+    // Đây là hàm bên trong mà có thể truy cập đến biến của hàm bên ngoài, truy cập được tham số của hàm ngoài.
+   function lastName (theLastName) {
+        return nameIntro + firstName + " " + theLastName;
+    }
+    return lastName;
+}
+
+var mjName = celebrityName ("Michael"); celebrityName (bên ngoài) đã trả về.
+
+// Closure (lastName) được goi ở đây sau khi hàm ngoài đã trả về.
+// Closure vẫn có thể truy cập được biến và tham số của hàm bên ngoài.
+mjName ("Jackson"); // This celebrity is Michael Jackson.
+
+2. Closures lưu tham chiếu đến biến của hàm bên ngoài:
+Closure không lưu giá trị. Closures trở nên thú vị khi giá trị của biến của hàm bên ngoài thay đổi trươc khi closures được gọi. Đây là một "tính năng" mạnh mẽ có thể được khai thác theo nhiều cách sáng tạo, ví dụ:
+function celebrityID () {
+    var celebrityID = 999;
+    // Ta đang trả về một object với các hàm bên trong.
+    // Tất cả các hàm bên trong có thể truy cập đến biến của hàm ngoài (celebrityID).
+    return {
+        getID: function ()  {
+            // Hàm này sẽ trả về celebrityID đã được cập nhật.
+            // Nó sẽ trả về giá trị hiện tại của celebrityID, sau khi setID thay đổi nó.
+          return celebrityID;
+        },
+        setID: function (theNewID)  {
+            // Hàm này sẽ thay đổi biến của hàm ngoài khi gọi.
+            celebrityID = theNewID;
+        }
+    }
+
+}
+
+var mjID = celebrityID (); //Lúc này, celebrityID đã trả về
+mjID.getID(); // 999
+mjID.setID(567); // Thay đổi biến của hàm ngoài
+mjID.getID(); // 567: Tả về biến celebrityID đã được cập nhật.
+
+3. Closures đôi khi trở nên không như ý:
+Bởi vì closures có thể truy cập đến các giá trị đã được cập nhật của các biến của hàm bên ngoài, chúng có thể gây ra bugs khi biến của hàm bên ngoài thay đổi với vòng lặp for, ví dụ:
+
+// Ví dụ này sẽ được giải thích bên dưới.
+function celebrityIDCreator (theCelebrities) {
+    var i;
+    var uniqueID = 100;
+    for (i = 0; i < theCelebrities.length; i++) {
+      theCelebrities[i]["id"] = function ()  {
+        return uniqueID + i;
+      }
+    }
+    
+    return theCelebrities;
+}
+
+var actionCelebs = [{name:"Stallone", id:0}, {name:"Cruise", id:0}, {name:"Willis", id:0}];
+
+var createIdForActionCelebs = celebrityIDCreator (actionCelebs);
+
+var stalloneID = createIdForActionCelebs [0];
+console.log(stalloneID.id()); // 103
+
+Trong ví dụ trên, trước khi hàm anonymous được gọi, giá trị của i là 3. Con số 3 được cộng vào uniqueID để tạo thành 103 cho tất cả celebritiesID. Vì vậy ở mỗi lúc trả về, thì giá trị nhận được là 103 thay vì 100, 101, 102 như mong muốn.
+Như đã giải thích ở ví dụ trước, closure (hàm anonymous trong ví dụ) đã truy cập đến biến của hàm bên ngoài bằng tham chiếu, không phải truy cập giá trị. Vì vậy như ví dụ trước đã chỉ ra, chúng ta có thể truy cập các biến đã được cập nhật với closure, ví dụ này truy cập biến i khi nó đã bị thay đổi, kết quả là hàm bên ngoài chạy toàn bộ vòng lặp và trả về giá trị cuối cùng của i, là 103.
+Để sửa bug này trong closures, ta có thể sử dụng Immediately Invoked Function Expression (IIFE), ví dụ như sau:
+
+
+function celebrityIDCreator (theCelebrities) {
+    var i;
+    var uniqueID = 100;
+    for (i = 0; i < theCelebrities.length; i++) {
+        theCelebrities[i]["id"] = function (j)  {
+            return function () {
+                return uniqueID + j;
+            } ()
+        } (i); // Chạy ngay khi hàm được gọ với tham số i
+    }
+
+    return theCelebrities;
+}
+
+var actionCelebs = [{name:"Stallone", id:0}, {name:"Cruise", id:0}, {name:"Willis", id:0}];
+
+var createIdForActionCelebs = celebrityIDCreator (actionCelebs);
+
+var stalloneID = createIdForActionCelebs [0];
+console.log(stalloneID.id); // 100
+
+var cruiseID = createIdForActionCelebs [1];
+console.log(cruiseID.id); // 101
+
+
+
+JavaScript Class Syntax
+Use the keyword class to create a class.
+Always add a method named constructor():
+
+****   __PROTO__ and prototype    ****
+
+	•	prototype is used to add properties and methods to all instances created with a constructor function in JavaScript.
+	•	__proto__ is used to access the properties and methods of the parent object (prototype) for a specific instance.
+In other words, prototype is used when defining a constructor function to add properties and methods that will be shared by all instances, while __proto__ is used at the instance level to access the properties and methods of the prototype.
+
+function Person(name) {
+    this.name = name;
+}
+
+// Adding a method to the Person function's prototype
+Person.prototype.introduce = function() {
+    console.log("Hi, I'm " + this.name);
+}
+
+var person1 = new Person("Alice");
+
+// Accessing prototype through __proto__
+console.log(person1.__proto__ === Person.prototype); // true
+
+// Accessing prototype method
+person1.introduce(); // Hi, I'm Alice
+
+
+**** Assign *****
+merge 2 objects
+
+//6. Object.Assign - mergin two objects
+
+var User = {name : "Aileen", add1 : "Lake City 1", mobile : "9898989889"}
+
+var Address = {name : "Aileen", add1 : "Wall Streets", productName : "New product" }
+
+//var Delivery = {User , Address}
+
+var Delivery = Object.assign(User, Address)//takes the left most ones updated values in case of same properties
+
+console.log(Delivery)
+
+{
+  name: 'Aileen',
+  add1: 'Wall Streets',
+  mobile: '9898989889',
+  productName: 'New product'
+}
+
+
+****       CALL. ***
+Method Reuse
+With the call() method, you can write a method that can be used on different objects.
+const person = {
+  fullName: function() {
+    return this.firstName + " " + this.lastName;
+  }
+}
+const person1 = {
+  firstName:"John",
+  lastName: "Doe"
+}
+const person2 = {
+  firstName:"Mary",
+  lastName: "Doe"
+}
+person.fullName.call(person1) //John Doe
+person.fullName.call(person1) //Mary Doe
+const person = {
+  fullName: function(city, country) {
+    return this.firstName + " " + this.lastName + "," + city + "," + country;
+  }
+}
+
+const person1 = {
+  firstName:"John",
+  lastName: "Doe"
+}
+
+person.fullName.call(person1, "Oslo", "Norway");
+
+Method Reuse
+With the apply() method, you can write a method that can be used on different objects.
+
+The JavaScript apply() Method
+The apply() method is similar to the call() method (previous chapter).
+In this example the fullName method of person is applied on person1:
+const person = {
+  fullName: function() {
+    return this.firstName + " " + this.lastName;
+  }
+}
+
+const person1 = {
+  firstName:"John",
+  lastName: "Doe"
+}
+person.fullName.apply(person1); //John Doe
+The Difference Between call() and apply()
+The difference is:
+The call() method takes arguments separately.
+The apply() method takes arguments as an array.
+
+const person = {
+  fullName: function(city, country) {
+    return this.firstName + " " + this.lastName + "," + city + "," + country;
+  }
+}
+
+const person1 = {
+  firstName:"John",
+  lastName: "Doe"
+}
+
+person.fullName.apply(person1, ["Oslo", "Norway"]); //John Doe,Oslo,Norway
+
+
+
+Function Borrowing
+With the bind() method, an object can borrow a method from another object.
+The example below creates 2 objects (person and member).
+The member object borrows the fullname method from the person object:
+const person = {
+  firstName:"John",
+  lastName: "Doe",
+  fullName: function () {
+    return this.firstName + " " + this.lastName;
+  }
+}
+
+const member = {
+  firstName:"Hege",
+  lastName: "Nilsen",
+}
+
+let fullName = person.fullName.bind(member); //Hege Nilsen
+
+
+Preserving this
+Sometimes the bind() method has to be used to prevent losing this.
+In the following example, the person object has a display method. In the display method, this refers to the person object:
+
+const person = {
+  firstName:"John",
+  lastName: "Doe",
+  display: function () {
+    let x = document.getElementById("demo");
+    x.innerHTML = this.firstName + " " + this.lastName;
+  }
+}
+
+person.display(); //John Doe
+
+——————
+When a function is used as a callback, this is lost.
+This example will try to display the person name after 3 seconds, but it will display undefined instead:
+const person = {
+  firstName:"John",
+  lastName: "Doe",
+  display: function () {
+    let x = document.getElementById("demo");
+    x.innerHTML = this.firstName + " " + this.lastName;
+  }
+}
+
+setTimeout(person.display, 3000);
+
+——
+The bind() method solves this problem.
+In the following example, the bind() method is used to bind person.display to person.
+This example will display the person name after 3 seconds:
+const person = {
+  firstName:"John",
+  lastName: "Doe",
+  display: function () {
+    let x = document.getElementById("demo");
+    x.innerHTML = this.firstName + " " + this.lastName;
+  }
+}
+
+let display = person.display.bind(person);
+setTimeout(display, 3000);
+
+
+
+What is this?
+In JavaScript, the this keyword refers to an object.
+Which object depends on how this is being invoked (used or called).
+The this keyword refers to different objects depending on how it is used:
+In an object method, this refers to the object.
+Alone, this refers to the global object.
+In a function, this refers to the global object.
+In a function, in strict mode, this is undefined.
+In an event, this refers to the element that received the event.
+Methods like call(), apply(), and bind() can refer this to any object.
+
+CALL BACK FUNCTION LOOSE ITS CONTEXT
+When a callback function loses its context in JavaScript, it means that the value of "this" inside the callback function is not what was originally intended. This can happen when the callback function is passed as an argument to another function or is used in a different context where "this" does not refer to the expected object.
+To maintain the correct context within a callback function in JavaScript, you can use techniques like arrow functions or bind(). Arrow functions inherit the context of the surrounding code, while bind() allows you to explicitly set the context for the function.
+Here is an example of using arrow functions to maintain the context in a callback function:
+
+class MyClass {
+    constructor() {
+        this.value = 42;
+    }
+
+    myMethod() {
+        setTimeout(() => {
+            console.log(this.value); // 'this' refers to the instance of MyClass
+        }, 1000);
+    }
+}
+
+const instance = new MyClass();
+instance.myMethod(); // Output: 42
+
+*** Bind — Call — Apply ****
+Yes, you can use the call method to set the context of a function just like bind. The difference is that call immediately executes the function with the specified context, while bind creates a new function with the specified context but does not execute it immediately.
+
+
+In JavaScript, both apply and call are used to invoke a function with a specific context (this value), while bind is used to create a new function with a specific context but not immediately execute it.
+The main difference between call and apply is how they accept arguments. The call method accepts arguments individually, while the apply method accepts arguments as an array.
+Here's an example demonstrating the use of apply and bind:
+
+const myObject = { value: 42 };
+
+function myFunction(arg1, arg2) {
+    console.log(this.value + arg1 + arg2);
+}
+
+myFunction.apply(myObject, [1, 2]); // Output: 45
+// 'apply' invokes myFunction with myObject as the context and passes arguments 1 and 2
+
+const boundFunction = myFunction.bind(myObject, 1, 2);
+boundFunction(); // Output: 45
+
+// 'bind' creates a new function with myObject as the context and pre-set arguments 1 and 2
+In this example, apply is used to invoke myFunction with myObject as the context and arguments 1 and 2, while bind is used to create a new function with myObject as the context and pre-set arguments 1 and 2.
+
+CONTEXT mean
+In JavaScript, "context" typically refers to the value of the this keyword within a function. The value of this is determined by how a function is called and it can be influenced by the way the function is invoked.
+The context of a function can be affected by various factors, such as:
+	•	How the function is called (e.g., as a method of an object, as a standalone function, with call or apply methods)
+// Define a simple function
+function greet() {
+    console.log(`Hello, ${this.name}!`);
+}
+
+// Case 1: As a method of an object
+const person = {
+    name: 'Alice',
+    greet: greet
+};
+person.greet(); // Output: Hello, Alice!
+
+// Case 2: As a standalone function
+const name = 'Bob';
+greet(); // Output: Hello, undefined! (this.name is undefined outside an object context)
+
+// Case 3: Using call method to specify context
+const contextObj = { name: 'Charlie' };
+greet.call(contextObj); // Output: Hello, Charlie!
+
+// Case 4: Using apply method with arguments
+const anotherContextObj = { name: 'David' };
+greet.apply(anotherContextObj); // Output: Hello, David!
+
+
+	•	Whether the function is used within a class or constructor function
+// Using a class
+class Person {
+    constructor(name) {
+        this.name = name;
+    }
+
+    greet() {
+        console.log(`Hello, ${this.name}!`);
+    }
+}
+
+const person1 = new Person('Alice');
+person1.greet(); // Output: Hello, Alice!
+
+// Using a constructor function
+function Animal(name) {
+    this.name = name;
+
+    this.greet = function() {
+        console.log(`Hello, ${this.name}!`);
+    };
+}
+
+const animal1 = new Animal('Charlie');
+animal1.greet(); // Output: Hello, Charlie!
+
+	•	Whether the function is used within an arrow function, where this is lexically scoped
+
+
+
+
+
+
+
+
+
+
+
+
+
+
