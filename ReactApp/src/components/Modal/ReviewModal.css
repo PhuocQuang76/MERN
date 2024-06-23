@@ -1,0 +1,92 @@
+body.active-modal {
+    overflow-y: hidden;
+}
+
+.btn-modal {
+    padding: 10px 20px;
+    display: block;
+    margin: 100px auto 0;
+    font-size: 18px;
+}
+
+.modal, .overlay {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+}
+
+.overlay {
+    background: rgba(49, 49, 49, 0.8);
+}
+.modal-content {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.4;
+    background: #f1f1f1;
+    padding: 14px 28px;
+    border-radius: 3px;
+    max-width: 600px;
+    min-width: 300px;
+}
+
+
+
+.review-modal {
+    font-size: small;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 250px;
+    width: 400px;
+    transform: translate(-50%, -50%);
+    z-index: 9999; /* Ensure modal is on top of other content */
+    background: rgb(61, 60, 54); /* Set background color */
+    padding: 20px; /* Add padding for content */
+    border: 1px solid #100f0f; /* Add a border */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+.review-modal .close-modal {
+    position: absolute;
+    right:10px;
+    margin-top: -10px;
+    width: 40px;
+    height: 20px;
+    font-size: small;
+ 
+    background-color: rgb(214, 217, 173);
+}
+
+.review-modal h4{
+    margin-top: 30px;
+    color:rgb(232, 232, 193)
+}
+.review-modal label {
+    width: 100px;
+    margin-top: 20px;
+}
+
+.review-modal input{
+    width:  180px;
+}
+
+.review-modal textarea{
+    width:  180px;
+    margin-top: 10px;
+}
+
+.review-modal .submitModel{
+    margin-left: 150px;
+    margin-top: 20px;
+    width: 60px;
+    height: 30px;
+    font-size: small;
+ 
+    background-color: rgb(214, 217, 173);
+}

@@ -1,0 +1,39 @@
+.cart {
+    max-width: 50rem;
+    background-color: #313131;
+    color: white;
+  }
+  
+  .cart h2 {
+    font-size: 1.25rem;
+    margin: 0rem;
+    padding-left: 10px;
+  }
+  
+  .cart ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .checkout {
+    font: inherit;
+    cursor: pointer;
+    background-color: #d8c277;
+    /* border: 1px solid #ffc404; */
+    color: #0f0d06;
+    padding: 0.5rem 1.5rem;
+    border-radius: 7px;
+    margin-left: 2px;
+    height: 30px;
+   
+  }
+
+  
+  .checkout:hover,
+  .checkout:active {
+    background-color: #ffab04;
+    border-color: #ffab04;
+    color: #1f1a09;
+    font-style: italics;
+  }

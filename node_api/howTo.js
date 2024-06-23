@@ -57,3 +57,32 @@ made to the source code files. It is commonly used during the development phase 
  payload:
  data we pass along with request
 */
+
+
+
+// 12-06-2024 - Reorder Page
+// Reorder
+// User to reorder from recent orders or from cancelled orders
+// A Simple process just add the order to your cart and replace or merge whatever is present in cart
+
+
+//https://github.com/CompCodeHub/mern-stack-shopping-cart
+
+// 12-06-2024 - Review Page
+// This should get its reviews from recent orders page
+// User should be allowed to give ratings and his comments to each products
+// Upon successful submission each product should have a link to show its review 
+// When user expands product detail we should also see the button to which will take us to its review
+// on recent order page we can show a popup to submit rating or a new page its up to you //can use -> react bootstrap
+// user should only be able to give rating once cancel button is gone
+
+
+//JWT authentication
+//1) using session cookie
+//2 json web token
+//JWT module
+
+//https://github.com/CompCodeHub/mern-stack-shopping-cart/tree/main/shopping-cart-project//
+
+
+//https://github.com/MishraAshish/mernstack18/blob/master/ReactApp/src/app/Common/VaccinationProject.js

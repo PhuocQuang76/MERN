@@ -1,0 +1,29 @@
+
+.myOrderItem td {
+    border: 1px solid black; /* Add border to <td> elements */
+   
+}
+
+
+
+
+
+
+.myOrderItem {
+    position: relative; /* Set position to relative for the parent element */
+  }
+  
+  .ReviewModalContainer {
+    position: fixed; /* Set position to fixed to position the ReviewModal outside the table */
+    top: 44%; /* Adjust the top value to center vertically */
+    left: 50%; /* Adjust the left value to center horizontally */
+    transform: translate(-50%, -50%); /* Center the modal */
+    background-color: rgb(37, 39, 27); /* Semi-transparent background */
+    z-index: 999; /* Ensure the ReviewModal appears above other elements */
+  }
+  
+  .ReviewModal {
+    background-color: white;
+    margin: 20px;
+    border: 1px solid #ccc;
+  }

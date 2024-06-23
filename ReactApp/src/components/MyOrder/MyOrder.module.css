@@ -1,0 +1,34 @@
+
+
+.myOrder{
+    background-color: #313131;
+    color: white;
+    margin-top:100px;
+    margin-left:5%;
+    margin-right:5%;
+    padding:20px;
+}
+
+.myOrder table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.myOrder table th, .table td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+.myOrder button{
+    height: 40px;
+    width: 100px;
+    border-radius: 8px;
+    margin-right:5px;
+}
+
+.activeButton {
+    background-color: #007bff; /* Set the desired active color */
+    color: #fff; /* Set the text color for active state */
+    
+}

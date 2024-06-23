@@ -1,0 +1,49 @@
+.checkout {
+    /* max-width: 30rem; */
+    background-color: #313131;
+    color: white;
+    margin-top:100px;
+    margin-left:15%;
+    margin-right:15%;
+    padding:20px;
+  }
+  .checkout header{
+    text-align: center;
+  }
+  .checkout h2 {
+    font-size: 1.25rem;
+    margin: 0.5rem 0;
+    color:#d8c277
+  }
+  
+  .checkout ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .checkout button{
+    font: inherit;
+    cursor: pointer;
+    background-color: #d8c277;
+    /* border: 1px solid #ffc404; */
+    color: #0f0d06;
+    padding: 0.5rem 1.5rem;
+    border-radius: 7px;
+    margin-left: 2px;
+    height: 30px;
+   
+  }
+
+  
+  .checkout button:hover,
+  .checkout button:active {
+    background-color: #ffab04;
+    border-color: #ffab04;
+    color: #1f1a09;
+    font-style: italics;
+  }
+
+  .couponDiv{
+    display: flex;
+  }
