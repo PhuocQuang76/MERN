@@ -32,8 +32,6 @@ export default class Success extends Component{
         return(
             <div>
                 <SuccessChild name={this.state.name} address={this.state.address} updateNameInParent={this.updateRandomValue}/>
-
-
                 <h5 className="inline">Random Value:</h5>
                 <p className="inline">{this.state.randomValueInit}</p>
 

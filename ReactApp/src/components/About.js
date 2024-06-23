@@ -16,8 +16,8 @@ let About = ()=>{
 
 
     return(
-        <div className="about" >  
-            <h2>We promise to support .... </h2>  
+        <div id="about" >  
+            <h1>We promise to support .... </h1>  
             <p className="about-content">
                 If you’re looking for a job—a great job—we can help  
                 you get in the door at some incredible companies.  

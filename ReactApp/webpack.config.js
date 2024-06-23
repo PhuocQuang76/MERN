@@ -1,8 +1,3 @@
-// entry point (file name + path ) ==> next the module depencencies 
-// default configuration - src/index.js
-// once - minification, transpilation, reference resolution, bundling is done
-// output path and the name of the file <bundle.js>
-// all modules that webpack is dependent on is termed as loaders needs
 
 let path = require("path"), //path module of node framework
 HtmlWebpackPlugin = require('html-webpack-plugin'), //to load the index html file on request
@@ -17,6 +12,7 @@ config = {
         port: 9090,
         historyApiFallback : false //localhost:9090/user
     },
+    devtool: "eval-cheap-source-map",
     // Rules of how webpack will take our files, complie & bundle them for the browser 
     module: {
         rules: [
@@ -41,14 +37,16 @@ config = {
                             loader: 'file-loader',
                             options: {
                                 name: '[name].[ext]',
-                                outputPath: 'assets',
+                                outputPath: 'assets/images',
                             },
                         },
                     ],
                 
                 
                 
-            }
+            },
+            
+            
         ]
     },
 

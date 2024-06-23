@@ -4,7 +4,8 @@ const SuccessStory = (props) => {
     const generateRandomValue = () => {
         const randomValue = Math.floor(Math.random() * 100); // Generate a random value
         props.onRandomValue(randomValue); // Pass the random value back to SuccessChild component
-      }
+    }
+
     return (
     <div>
         <h5 className="inline">Success Story:</h5>

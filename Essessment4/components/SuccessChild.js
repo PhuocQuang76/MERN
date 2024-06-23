@@ -10,12 +10,12 @@ const SuccessChild = (props) => {
 
     return (
         <div>
-        <h5 className="inline">Name:</h5>
-        <p className="inline">{props.name}</p>
-        <br></br>
-        <h5 className="inline">Address: </h5>
-        <p className="inline">{props.address}</p>
-        <SuccessStory story="This is a success story." onRandomValue={handleRandomValue} />
+            <h5 className="inline">Name:</h5>
+            <p className="inline">{props.name}</p>
+            <br></br>
+            <h5 className="inline">Address: </h5>
+            <p className="inline">{props.address}</p>
+            <SuccessStory story="This is a success story." onRandomValue={handleRandomValue} />
         </div>
     );
 };
