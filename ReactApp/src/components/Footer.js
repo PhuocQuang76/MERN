@@ -3,7 +3,7 @@ import React from "react";
 let Footer = ()=>{
     return(
         <div id="footer_div">
-            <h2>Footer Component</h2>
+            <h2>@Copyright by Aileen</h2>
         </div>
     )
 }

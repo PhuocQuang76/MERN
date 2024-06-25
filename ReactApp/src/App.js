@@ -19,6 +19,7 @@ import AddProduct from "./components/Product/AddProduct";
 import ReviewModal from "./components/Modal/ReviewModal";
 import Review from "./components/Product/Review";
 import MyOrder from "./components/MyOrder/MyOrder";
+import Authentication from './components/Authentication/Authentication';
 
 class App extends Component {
     constructor(props) {
@@ -49,6 +50,7 @@ class App extends Component {
                         <Route path="/" element={<Home />} />
                         <Route path="/home" element={<Home />} />
                         <Route path="/user" element={isLogin ? <Navigate to="/home" /> : <UserComponent />} />
+                        <Route path="/auth" element={<Authentication />} />
                         <Route path="/userHook" element={<UserHook />} />
                         <Route path="/student" element={<Student />} />
                         <Route path="/product" element={<AddProduct />} />

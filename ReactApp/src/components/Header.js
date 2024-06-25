@@ -1,5 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink , useNavigate} from "react-router-dom";
+import { Link } from 'react-router-dom';
+
 import { useSelector ,useDispatch} from "react-redux"; //replacement of mapStateToProps
 import logoImg from '../assets/logo.jpg';
 import Button from "./UI/Button.jsx";
@@ -9,11 +11,25 @@ import Notification from "../images/notification.svg";
 
 import { resetUserFromStore,updateLoginStatus } from "../store/User/userAction";// Import the logout action creator
 import { GetCardFromDBByUserId ,clearItemsInCart} from '../store/Cart/cart-actions.js';
+
+import { addStaticNotification ,removeDynamicNotificationItem} from "../store/Notification/notification-action.js";
+
 let Header = (props) => {
+// Define openNotification state variable
+const [openNotification, setOpenNotification] = useState(false);
+
     const dispatch = useDispatch(); //Get the dispatch function from react-redux
     const navigate = useNavigate();
 
     const user = useSelector((state) => state.user.user);
+
+  
+    const notification = useSelector((state => state.notification.staticNotification));
+
+    const dynamicNotification = useSelector((state) => state.notification.dynamicNotifications);
+    let len = dynamicNotification.length;
+    
+
     const userId = user._id;
     
     const { cartTotalQuantity } = useSelector((state) => state.cart);
@@ -32,10 +48,58 @@ let Header = (props) => {
         navigate("/home");
     };
       
-      
+    const handleRemoveItem = (index) => {
+        dispatch(removeDynamicNotificationItem(index));
+        closeNotificationDropdown();
+    };
   
     const usrName = user && user.userName ? user.userName : props.userName;
+
+    const staticNotificationObj = {
+        "staticNotifications": [
+            {
+                "staticId": 1,
+                "message": "Add Products"
+            },
+            {
+                "staticId": 2,
+                "message": "Go to cart page"
+            },
+            {
+                "staticId": 3,
+                "message": "Review cart"
+            },
+            {
+                "staticId": 4,
+                "message": "Create Coupon"
+            },
+            {
+                "staticId": 5,
+                "message": "Check order status"
+            }
+        ]
+    };
+    useEffect(() => {
+        dispatch(addStaticNotification(staticNotificationObj));
+    }, [dispatch]);
   
+
+    useEffect(() => {
+        if (dynamicNotification.length > 0) {
+            setOpenNotification(true); // Open the notification dropdown
+            const timer = setTimeout(() => {
+                closeNotificationDropdown();
+            }, 5000); // Close the notification dropdown after 5 seconds
+
+            return () => clearTimeout(timer); // Clear the timer on component unmount
+        }
+    }, [dynamicNotification]);
+
+    const closeNotificationDropdown = () => {
+        setOpenNotification(false);
+    };
+
+
     return (
         <>
             <header id="main-header">
@@ -52,15 +116,47 @@ let Header = (props) => {
                 
                 
                 
-<               div className="icons">
-                    <div className="icon" onClick={() => setOpen(!open)}>
-                        <img src={Notification} className="iconImg" alt="" />
-                        <div className="counter">2</div>
-                        {
-                            // notifications.length >0 &&
-                            // <div className="counter">{notifications.length}</div>
-                        }
-                     </div>
+<div className="icons">
+
+
+
+<div className={`notification ${openNotification ? 'active' : ''}`}>
+    <div className="icon" onClick={() => setOpenNotification(!openNotification)}>
+        <img src={Notification} className="iconImg" alt="" />
+        <div className="counter">{len}</div>
+    </div>
+    {/* Render notification dropdown based on openNotification state */}
+    {openNotification &&  user._id && (
+        <div className="notification-dropdown">
+            {/* Map over the notification array and render each item's message */}
+            {notification[0].map((item, index) => (
+                <div key={item._id}>
+                    <Link to={index === 0 ? "/product" : index === 1 ? "/cart" : index === 2 ? "/checkout" : index === 3 ? "/coupon" : "/order"}
+                        onClick={() => setOpenNotification(false)} // Close dropdown when link is clicked
+                    >
+                        <div>
+                            {item.message}
+                        </div>
+                    </Link>
+                </div>
+            ))}
+            
+            <div className="dynamicNotification">
+                {dynamicNotification.length > 0 && (
+                    <>
+                        {dynamicNotification.map((item, index) => (
+                            <h6 key={index} onClick={() => handleRemoveItem(index)}>{item}</h6>
+                        ))}
+                    </>
+                )}
+            </div>
+
+
+
+        </div>
+    )}
+</div>
+
 
                      {userId && (
                     <NavLink to="/cart">
@@ -82,8 +178,9 @@ let Header = (props) => {
                     </NavLink>
                 )}
 
-
-                     <h4 id="hiUser">Hi {usrName}</h4>  
+                    {usrName && 
+                     <h4 id="hiUser">Hello, {usrName}</h4>  
+                    }
                 </div>
 
                  
@@ -122,7 +219,10 @@ let Header = (props) => {
                     <NavLink to="/user" className="button" activeclassname="true">
                         Login
                     </NavLink>
-                    </div>
+                    <NavLink to="/auth" className="button" activeclassname="true">
+                        Authentication
+                    </NavLink>
+                </div>
             )}
 
         

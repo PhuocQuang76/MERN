@@ -7,6 +7,7 @@ import { AddItemToCartInDB } from '../../store/Cart/cart-actions.js';
 import star from "../../images/star-icon.svg";
 import halfStar from "../../images/star-half-icon.svg";
 import lineStar from "../../images/star-line-icon.svg";
+import { addDynamicNotification } from "../../store/Notification/notification-action.js";
 // import { io } from 'socket.io-client';
 
 
@@ -66,6 +67,9 @@ const ProductDetail = ({ product }) => {
             },
         };
         dispatch(AddItemToCartInDB(newCart));
+        let message = `add  ${product.name}  to cart`;
+       
+        dispatch(addDynamicNotification(message));
 
 
         // Notify the server when a product is added to the cart

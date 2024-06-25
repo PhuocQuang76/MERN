@@ -1,6 +1,9 @@
 let express = require("express")
 let session = require("express-session");
 
+const { generateToken } = require("../Service/tokenGenerator");
+const { authenticate } = require("../Middleware/authMidleware");
+
 let userRouter = express.Router({}) // 
 let UserDataModel = require("../DataModels/UserDataModel"); //this gives access to all the methods defined in mongoose to access mongo db data
 
@@ -20,27 +23,34 @@ userRouter.post("/api/signinup",(req, res)=>{ //localhost:9000/user/api/signinup
     //initialize the userSchema
 
 
-  UserDataModel.findOne({ userName: req.body.userName }).then((existingUser) => {
-    if (existingUser) {
+    UserDataModel.findOne({ userName: req.body.userName }).then((existingUser) => {
+        if (existingUser) {
+            //generateToke by user._id
+            generateToken(res, existingUser._id);
 
-      console.log("sign in success", existingUser);
-      res.send(existingUser);
-    } else {
-      let newUser = new UserDataModel(req.body);
+            console.log("sign in success", existingUser);
+            res.send(existingUser);
+        } else {
+            let newUser = new UserDataModel(req.body);
 
-      newUser.save().then((newUser) => {
-        
-        console.log("successful signup", newUser);
-        res.send(newUser);
-      }).catch((err1) => {
-        console.log("err signup", err1);
-        res.send("error while sign up");
-      });
-    }
-  }).catch((err) => {
-    console.log("err sign in", err);
-    res.send("error while searching user sign in");
-  });
+            newUser
+            .save()
+            .then((newUser) => {   
+                console.log("successful signup", newUser);
+                //will get _id once document is created, and generate toke base on that _id
+                generateToken(res, newUser._id);
+
+                res.send(newUser);
+            })
+            .catch((err1) => {
+                console.log("err signup", err1);
+                res.send("error while sign up");
+            });
+        }
+    }).catch((err) => {
+        console.log("err sign in", err);
+        res.send("error while searching user sign in");
+    });
 });
 
 
@@ -59,7 +69,7 @@ userRouter.post("/api/signinup",(req, res)=>{ //localhost:9000/user/api/signinup
 
 
 //code to fetch all the users from user collection and return back 
-userRouter.get("/api/users",(req, res)=>{
+userRouter.get("/api/users",authenticate,(req, res)=>{
     UserDataModel.find()
     .then((allusers)=>{
         res.send(allusers)
@@ -69,5 +79,6 @@ userRouter.get("/api/users",(req, res)=>{
     })
 })
   
+
 
   module.exports = userRouter;

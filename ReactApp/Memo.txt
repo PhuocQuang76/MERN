@@ -1,0 +1,45 @@
+1. server side:
+node_api
+ - execute: start
+ - including:
+    DataModels
+    Routers
+    server.js
+
+2. client side:
+ - execute: npm run build, npm start
+ - components
+ - store (redux control state)
+
+3. using webpack
+.babelrc,.gitignore, webpack.config.js, dist folder, html.index, html.js, App.js, App.css
+     /*
+.babelrc file in your project allows you to customize and fine-tune how Babel transpiles 
+your modern JavaScript code into a more widely supported format, making it easier to
+ write modern JavaScript code while ensuring compatibility with older environments.
+
+ @babel/preset-env: This preset enables Babel to transform modern JavaScript code to be 
+ compatible with specific browser environments based on the configuration provided. 
+ It allows you to target specific versions of browsers or environments, ensuring that 
+ the generated code works across a wide range of targets.
+
+@babel/preset-react: This preset is used for transforming JSX syntax commonly used in React
+ applications into standard JavaScript that browsers can understand. It includes plugins
+  necessary for working with React components, JSX elements, and other React-specific 
+  features.
+ */
+
+RUles in webpack.config
+Rules of how webpack will take our files, complie & bundle them for the browser 
+
+
+
+
+//store : is a redux object which helps us handle state changes
+//reducer : is a function which works with switch case (for each action type) and updates the state
+// for every change returns new state, each component will have its respective reducer 
+//action : is the object a reducer accepts to create a new state
+//action : object => action type (increment) ,payload (+5)
+
+
+PureComponent and Component

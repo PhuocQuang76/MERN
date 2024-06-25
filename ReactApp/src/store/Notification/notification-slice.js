@@ -4,27 +4,37 @@ import { createSlice } from '@reduxjs/toolkit';
 const notificationSlice = createSlice({
     name: "notifications",
     initialState: {
-        notifications: [],
+        staticNotification:[],
+        dynamicNotifications: [],
         
     },
     reducers: {
-        addNotification(state, action) {
+        addStaticNotification(state, action) {
             return {
                 ...state,
-                notifications: [...state.notifications, action.payload]
+                staticNotification: [...state.staticNotification, action.payload]
             };
         },
 
 
-        removeNotification(state, action) {
+
+
+        addDynamicNotification(state, action) {
+           
             return {
                 ...state,
-                notifications: state.notifications.filter(
-                    (notification) => notification._id !== action.payload
-                )
+                dynamicNotifications: 
+                 [...state.dynamicNotifications, action.payload]
             };
         },
 
+
+        removeDynamicNotificationItem(state, action) {
+            state.dynamicNotifications.splice(action.payload, 1); // Remove item at the provided index
+        },
+
+
+        
         removeNotificationByUrl(state,action){
             return {
                 ...state,

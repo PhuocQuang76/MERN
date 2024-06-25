@@ -14,6 +14,7 @@ import UseEffectHook from "./components/UseEffectHook";
 import UserHook from "./Application/UserHookComponent";
 import Student from "./Application/StudentComponent";
 import AddProduct from "./Application/Product/AddProduct";
+import Authentication from "./components/Authentication/Authentication";
 
 
 export default class App extends Component {
@@ -72,6 +73,7 @@ export default class App extends Component {
                                                     updateNameInParent={this.updateName} />}/>
                         
                         <Route path="/user" element={<UserComponent />}/>
+                        <Route path="/auth" element={<Authentication />}/>
                         <Route path="/userHook" element={<UserHook />}/>
                         <Route path="/student" element={<Student />} />
                         <Route path="/product" element={<AddProduct />} />

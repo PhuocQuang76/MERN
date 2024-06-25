@@ -152,6 +152,30 @@
   display: flex;
   align-items: center;
 }
+.notification {
+  position: relative;
+}
+
+.notification-dropdown {
+  position: absolute;
+  top: 100%; /* Place the dropdown below the notification icon */
+  left: 0;
+  background: rgb(241, 234, 153);
+  border: 1px solid #ccc;
+  padding: 10px;
+  display: none; /* Initially hide the dropdown */
+  width: 300px;
+}
+
+.notification.active .notification-dropdown {
+  display: block; /* Show the dropdown when the active class is present */
+}
+
+
+
+.dynamicNotification{
+  color:black;
+}
 .icon {
   margin-left: 15px;
   cursor: pointer;

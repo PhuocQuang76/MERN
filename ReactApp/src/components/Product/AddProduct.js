@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from "react-redux";
+import { useNavigate, userNavigate} from 'react-router-dom';
 import { AddProductToDB } from '../../store/Product/productAction';
 
 const AddProduct = () => {
@@ -7,6 +8,7 @@ const AddProduct = () => {
     let product = useSelector((store) => store.product); // reads defined data in reducer
     
     const dispatchToDB = useDispatch();
+    const navigate = useNavigate();
 
     const [productCode, setProductCode] = useState(product.product.productCode);
     const [name, setName] = useState(product.product.name);
@@ -54,6 +56,7 @@ const AddProduct = () => {
 
     dispatchToDB(AddProductToDB(newProduct));
     resetInputFields();
+    navigate("/home");
 };
   
 

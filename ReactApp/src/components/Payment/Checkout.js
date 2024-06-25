@@ -5,6 +5,7 @@ import classes from './Checkout.module.css';
 import CheckoutItem from './CheckoutItem';
 import { couponActions } from '../../store/Coupon/coupon-sclice';
 import { acceptedStatusUpdate } from '../../store/Cart/cart-actions';
+import { addDynamicNotification } from "../../store/Notification/notification-action.js";
 
 const Checkout = ()=> {
     const navigate = useNavigate();
@@ -30,15 +31,17 @@ const Checkout = ()=> {
     }
    
     function payment(){
-        alert("userId:" + userId);
-        alert("items:" + items);
+       
+        
         alert("Thank you for your purchase.");
         let paymentObject = {
             userId:userId,
             items:items
         }
         dispatch(acceptedStatusUpdate(paymentObject));
+        let message = "Made a payment...";
        
+        dispatch(addDynamicNotification(message));
 
         navigate("/home");
         //evt.preventDefault();//it stops the default behaviour like event propagation

@@ -18,6 +18,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { couponActions } from "../../store/Coupon/coupon-sclice"; // Import your actions
+import { addDynamicNotification } from "../../store/Notification/notification-action.js";
 
 const Coupon = () => {
     const coupon = useSelector((state) => state.coupon);
@@ -36,6 +37,10 @@ const Coupon = () => {
             console.log("couponNumber:", couponNumber);
             console.log("discountPercent:", discountPercent);
             dispatch(couponActions.addCouponAndDiscount({ couponNumber, discountPercent }));
+            let message = "Coupon created...";
+       
+            dispatch(addDynamicNotification(message));
+
         };
 
     return (

@@ -180,3 +180,23 @@
   },
 
 
+
+
+const staticNotifications = [
+      {
+          staticId:1,
+          message: "To Add Products from Product Screen" },
+      { 
+        staticId:2,
+        message: "To Add Items from Cart Page" },
+      { 
+        staticId:3,
+        message: "To review cart from Checkout Page" },
+      { 
+        staticId:4,
+        message: "To Make Payment from Payment Page" },
+
+      { 
+        staticId:5,
+        message: "To Assist Them for cancel/reorder" }
+    ];

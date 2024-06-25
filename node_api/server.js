@@ -56,6 +56,7 @@ console.log("In server js");
 // Express.js application by requiring the Express module and creating an Express application instance, which sets up 
 // the foundation for building a web server or API using the Express framework in a Node.js application.
 const express = require('express');
+// require("dotenv").config();
 
 // creates an instance of the Express application. This app object represents your Express server and allows you to 
 // define routes, middleware, and other configurations for your web application.
@@ -76,6 +77,7 @@ const userRouter = require("./Routers/userRoute")
 const studentRouter = require("./Routers/studentRoute")
 const productRouter = require("./Routers/productRoute")
 const cartRouter = require("./Routers/cartRoute")
+const notificationRouter = require("./Routers/notificationRoute");
 
 global.rootDir = __dirname;
 
@@ -85,6 +87,7 @@ const userApp = express();
 const studentApp = express();
 const productApp = express();
 const cartApp = express();
+const notificationApp = express();
 
 app.use(cors()) //enabling cross origin resource sharing at root level
 
@@ -123,6 +126,10 @@ productApp.use(productRouter)
 //api path register cart => localhost:9000/cart/save
 app.use("/cart",cartApp)
 cartApp.use(cartRouter)
+
+//api path register notification => localhost:9000/notification/save
+app.use("/notification",notificationApp)
+notificationApp.use(notificationRouter)
 
 //api path register product => localhost:9000/product/save
 

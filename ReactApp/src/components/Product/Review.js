@@ -10,7 +10,7 @@ const Review = ()=> {
     
     const navigate = useNavigate();
     
-    debugger;
+
     let reviews = useSelector((state)=> state.review.productReviews)
 
     const dispatch = useDispatch();

@@ -9,7 +9,7 @@ import {updateQuantity,cancelPendingItemFromCart,updateStatusToDeliveredOrCancel
 import {removeItemInCart } from '../../store/Cart/cart-actions.js';
 import ReviewModal from '../Modal/ReviewModal'; // Import the ReviewModal component
 import {GetReviewsFromDBByUserId} from '../../store/Reviews/review-action.js';
-
+import { addDynamicNotification } from "../../store/Notification/notification-action.js";
 import axios from 'axios';
 
 
@@ -30,17 +30,22 @@ const MyOrderItem = (props) => {
     const userId = user._id;
 
     const quantityInputRef = useRef(null);
+
+   // alert("quanity: " + quantityInputRef.current); // Move this line to useEffect or after ensuring quantityInputRef.current is not null
     
-    const handleSaveClick = () => {
-        const quantityUpdateObj = {
-            userId: userId,
-            productId: productId,
-            updatedQuantity: quantityInputRef.current.value, // Get the value from the input element
-            status:status
-        }
-        dispatch(updateQuantity(quantityUpdateObj));
-        setIsEditing(false);
+
+
+   const handleSaveClick = () => {
+    const updatedQuantity = quantityInputRef.current.value;
+    const quantityUpdateObj = {
+        userId: userId,
+        productId: productId,
+        updatedQuantity: updatedQuantity,
+        status: status
     }
+    dispatch(updateQuantity(quantityUpdateObj));
+    setIsEditing(false);
+}
 
     const handleEditClick = () => {
         setIsEditing(true);
@@ -53,6 +58,8 @@ const MyOrderItem = (props) => {
             isOpen:true
         }
         dispatch(updateModal(modalObj));
+        let message = "Review created ...";
+        dispatch(addDynamicNotification(message));
     }
     
     const closeReviewModal = () => {
@@ -68,6 +75,8 @@ const MyOrderItem = (props) => {
             status:status
         }
         dispatch(cancelPendingItemFromCart(cancelPendingItemObj));
+        let message = "Removed items from cart...";
+        dispatch(addDynamicNotification(message));
     }
 
     const handleReOrderClick = () => {
@@ -78,7 +87,8 @@ const MyOrderItem = (props) => {
             status:status
         }
         dispatch(reOrderItemFromCanceled(reOrderObj));
-
+        let message = "Reordered Items...";
+        dispatch(addDynamicNotification(message));
     }
 
     const handleDeliveryClick = () => {
@@ -92,6 +102,8 @@ const MyOrderItem = (props) => {
 
        
         dispatch(updateStatusToDeliveredOrCancel(cancelObj));
+        let message = "Order delivered...";
+        dispatch(addDynamicNotification(message));
     }
 
     const handleCancelClick = () => {
@@ -129,7 +141,7 @@ const MyOrderItem = (props) => {
                         isEditing? (
                         <input 
                             type="text" 
-                            defaultValue={quantity} 
+                            
                             ref={quantityInputRef} 
                         />
                         ):(
