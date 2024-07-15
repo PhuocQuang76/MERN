@@ -1,0 +1,13 @@
+
+.vaccines h2{
+    text-align: center;
+}
+.vaccines ul{
+    text-decoration: none;
+}
+
+.vaccines li{
+    background-color: rgb(47, 47, 47);
+    margin: 0 13% 0 10%;
+    padding:  2% 2% 0 2%;
+}

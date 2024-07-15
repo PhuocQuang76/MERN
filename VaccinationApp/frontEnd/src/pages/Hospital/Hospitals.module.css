@@ -1,0 +1,13 @@
+
+.hospitals h2{
+    text-align: center;
+}
+.hospitals ul{
+    text-decoration: none;
+}
+
+.hospitals li{
+    background-color: rgb(47, 47, 47);
+    margin: 0 13% 0 10%;
+    padding:  2% 2% 0 2%;
+}

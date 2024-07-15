@@ -1,0 +1,222 @@
+https://images.pexels.com/photos/10670920/pexels-photo-10670920.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2
+
+https://images.pexels.com/photos/8606485/pexels-photo-8606485.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2
+
+https://images.pexels.com/photos/18746707/pexels-photo-18746707/free-photo-of-man-holding-vaccines.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2
+
+https://images.pexels.com/photos/8413428/pexels-photo-8413428.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2
+
+https://images.pexels.com/photos/3786215/pexels-photo-3786215.jpeg?auto=compress&cs=tinysrgb&w=800/
+
+https://images.pexels.com/photos/3952236/pexels-photo-3952236.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2
+
+
+https://www.pexels.com/photo/person-holding-blue-and-white-vaccine-3952247/
+
+{
+    "name": "Chickenpox",
+    "images": "https://images.pexels.com/photos/5994655/pexels-photo-5994655.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "description": "Chickenpox is a highly contagious disease caused by the varicella-zost…",
+    "age": "9-26",,
+    "dose":"2",
+    "type": "RSV immunization",
+    "price": "40",
+    "contrains": "Vaccine Constraints",
+    "sideAffect": "Pain at the injection site or a rash."
+}
+
+name
+
+{
+    "name": "COVID-19",
+    "images": "https://images.pexels.com/photos/8606485/pexels-photo-8606485.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "description": "Everyone aged 5 years and older ‡ should get 1 dose of an updated COVID-19 vaccine to protect against serious illness from COVID-19.",
+    "age": "> 5",
+    "dose":"1-3",
+    "type": "RSV immunization",
+    "price": "80",
+    "contrains": "Vaccine Constraints",
+    "sideAffect": "Pain at the injection site or a rash."
+}
+
+{
+    "name": "Influenza",
+    "images": "https://images.pexels.com/photos/18746707/pexels-photo-18746707/free-photo-of-man-holding-vaccines.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "description": "Influenza (flu) is a contagious respiratory illness caused by influenza viruses that infect the nose, throat, and lungs..",
+    "age": "all",
+    "dose":"1",
+    "type": "RSV immunization",
+    "price": "35",
+    "contrains": "Vaccine Constraints",
+    "sideAffect": "Pain at the injection site or a rash."
+
+}
+
+
+{
+    "name": "Hepatitis",
+    "images": "https://images.pexels.com/photos/9786295/pexels-photo-9786295.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "description": "Hepatitis B is a serious disease caused by a virus that attacks the liver.",
+    "age": "19-59",
+    "dose": "1",
+    "type": "B",
+    "price": "55",
+    "contrains": "Vaccine Constraints",
+    "sideAffect": "Pain at the injection site or a rash."
+}
+
+
+{
+    "name": "HPV",
+    "images": "https://images.pexels.com/photos/8413428/pexels-photo-8413428.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "description": "HPV is a common virus that can lead to certain types of cancer later in life.",
+    "age": "11-12",
+    "dose": "1",
+    "type": "B",
+    "price": "45",
+    "contrains": "Vaccine Constraints",
+    "sideAffect": "Pain at the injection site or a rash."
+}
+
+{
+
+    "name": "MMR",
+    "images": "https://images.pexels.com/photos/3786215/pexels-photo-3786215.jpeg?auto=compress&cs=tinysrgb&w=800/",
+    "description": "CDC recommends that people get MMR vaccine to protect against measles, mumps, and rubella.",
+    "age": "12-15",
+    "dose": "1",
+    "type": "B",
+    "price": "58",
+    "contrains": "Vaccine Constraints",
+    "sideAffect": "Pain at the injection site or a rash."
+}
+
+{
+    "name": "DTap",
+    "images": "https://images.pexels.com/photos/3952236/pexels-photo-3952236.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "description": "Vaccines are available that help prevent whooping cough, also known as pertussis.",
+    "age": "0-7",
+    "dose": "1",
+    "type": "B",
+    "price": "49",
+    "contrains": "Vaccine Constraints",
+    "sideAffect": "Pain at the injection site or a rash."
+}
+
+
+
+
+
+
+---------------
+
+
+
+"age": [18, 65],
+
+
+{
+    "name": "Chickenpox",
+    "images": "https://images.pexels.com/photos/5994655/pexels-photo-5994655.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "description": "Chickenpox is a highly contagious disease caused by the varicella-zost…",
+    "age": ["9", "26"],
+    "dose":"2",
+    "type": "RSV immunization",
+    "price": 40,
+    "contrains": "Vaccine Constraints",
+    "sideAffect": "Pain at the injection site or a rash."
+}
+
+name
+
+{
+    "name": "COVID-19",
+    "images": "https://images.pexels.com/photos/8606485/pexels-photo-8606485.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "description": "Everyone aged 5 years and older ‡ should get 1 dose of an updated COVID-19 vaccine to protect against serious illness from COVID-19.",
+    "age": [">","5"],
+    "dose":"1-3",
+    "type": "RSV immunization",
+    "price": 80,
+    "contrains": "Vaccine Constraints",
+    "sideAffect": "Pain at the injection site or a rash."
+}
+
+{
+    "name": "Influenza",
+    "images": "https://images.pexels.com/photos/18746707/pexels-photo-18746707/free-photo-of-man-holding-vaccines.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "description": "Influenza (flu) is a contagious respiratory illness caused by influenza viruses that infect the nose, throat, and lungs..",
+    "age": ["all"],
+    "dose":"1",
+    "type": "RSV immunization",
+    "price": 35,
+    "contrains": "Vaccine Constraints",
+    "sideAffect": "Pain at the injection site or a rash."
+
+}
+
+
+{
+    "name": "Hepatitis",
+    "images": "https://images.pexels.com/photos/9786295/pexels-photo-9786295.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "description": "Hepatitis B is a serious disease caused by a virus that attacks the liver.",
+    "age": "19-59",
+    "dose": "1",
+    "type": "B",
+    "price": 55,
+    "contrains": "Vaccine Constraints",
+    "sideAffect": "Pain at the injection site or a rash."
+}
+
+
+{
+    "name": "HPV",
+    "images": "https://images.pexels.com/photos/8413428/pexels-photo-8413428.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "description": "HPV is a common virus that can lead to certain types of cancer later in life.",
+    "age": ["11","12"],
+    "dose": "1",
+    "type": "B",
+    "price": 45,
+    "contrains": "Vaccine Constraints",
+    "sideAffect": "Pain at the injection site or a rash."
+}
+
+{
+
+    "name": "MMR",
+    "images": "https://images.pexels.com/photos/3786215/pexels-photo-3786215.jpeg?auto=compress&cs=tinysrgb&w=800/",
+    "description": "CDC recommends that people get MMR vaccine to protect against measles, mumps, and rubella.",
+    "age": ["12","15"],
+    "dose": "1",
+    "type": "B",
+    "price": 60,
+    "contrains": "Vaccine Constraints",
+    "sideAffect": "Pain at the injection site or a rash."
+}
+
+{
+    "name": "DTap",
+    "images": "https://images.pexels.com/photos/3952236/pexels-photo-3952236.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    "description": "Vaccines are available that help prevent whooping cough, also known as pertussis.",
+    "age": ["0","7"],
+    "dose": "1",
+    "type": "B",
+    "price": 50,
+    "contrains": "Vaccine Constraints",
+    "sideAffect": "Pain at the injection site or a rash."
+}
+
+
+======
+{
+    "name": "Northridge Hospital",
+    "address": "18300 Roscoe Blvd, Reseda, CA 91325",
+    "type": "private",
+    "charge": 35
+}
+
+{
+    "name": "UCLA West Valley Medical Center",
+    "address": "14850 Roscoe Blvd, Panorama City, CA 91402",
+    "type": "government",
+    "charge": 25
+}

@@ -1,0 +1,19 @@
+.chart{
+    margin-left: 10%;
+    margin-bottom: 5%;
+    color:rgb(62, 65, 138);
+    
+}
+
+.agePieChart{
+    margin-left: 50%;
+}
+
+.chart h3{
+    color:rgb(221, 221, 125)
+}
+.agePieChart h3{
+    color:rgb(221, 221, 125);
+    margin-left: -200px;
+    margin-top: 5%;
+}

@@ -1,0 +1,12 @@
+
+
+.addVaccine form  label{
+    width: 120px;
+
+}
+
+.addVaccine form  input,textarea{
+    width: 500px;
+    margin-bottom:5px;
+    border-radius: 5px;
+}

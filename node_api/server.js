@@ -143,5 +143,3 @@ const PORT = 9000; // Specify the desired port number
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
-
-

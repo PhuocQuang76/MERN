@@ -1,0 +1,13 @@
+.imageDiv{
+    display: flex;
+    justify-content: center;
+}
+
+.imageDiv img {
+    display: block; /* Make the image a block element */
+    margin: auto; /* Center the image horizontally */
+}
+
+.contact{
+    text-align: center;
+}

@@ -1,5 +1,5 @@
 import React, { useState ,useEffect} from 'react';
-import { Form } from 'react-router-dom';
+import { Form ,Link, useSearchParams} from 'react-router-dom';
 
 import classes from './AuthForm.module.css';
 

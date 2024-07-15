@@ -1,0 +1,12 @@
+
+
+.addHospital form  label{
+    width: 120px;
+
+}
+
+.addHospital form  input,textarea{
+    width: 500px;
+    margin-bottom:5px;
+    border-radius: 5px;
+}

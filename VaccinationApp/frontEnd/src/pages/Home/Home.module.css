@@ -1,0 +1,35 @@
+.homepage{
+    margin:5%;
+    text-align: center;
+}
+
+.homepage h2{
+    color:rgb(217, 148, 57)
+}
+.homepage Link{
+    color:rgb(217, 148, 57)
+}
+
+
+.carousel_inner {
+    width: 50%; /* Adjust the width of the carousel inner container */
+    margin: 0 auto; /* Center the carousel */
+}
+
+.carousel_item {
+    width: 100%; /* Adjust the width of each carousel item */
+    height: 300px; /* Adjust the height of each carousel item */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel_item img {
+    max-width: 100%; /* Make sure the image fits within the carousel item */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.carousel_item div {
+    text-align: center; /* Center text content */
+}

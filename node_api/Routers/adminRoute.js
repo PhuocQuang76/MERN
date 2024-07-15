@@ -10,7 +10,7 @@ let adminRouter = express.Router({}) //
 
 
 adminRouter.get("/",(req, res)=>{
-    res.send("Hello World from Admin APP")
+    res.send("Hello World from Admin API")
 })
 
 adminRouter.get("/info",(req, res)=>{

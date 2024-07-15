@@ -114,48 +114,41 @@ const [openNotification, setOpenNotification] = useState(false);
                     Cart 
                 </NavLink> */}
                 
-                
-                
-<div className="icons">
-
-
-
-<div className={`notification ${openNotification ? 'active' : ''}`}>
-    <div className="icon" onClick={() => setOpenNotification(!openNotification)}>
-        <img src={Notification} className="iconImg" alt="" />
-        <div className="counter">{len}</div>
-    </div>
-    {/* Render notification dropdown based on openNotification state */}
-    {openNotification &&  user._id && (
-        <div className="notification-dropdown">
-            {/* Map over the notification array and render each item's message */}
-            {notification[0].map((item, index) => (
-                <div key={item._id}>
-                    <Link to={index === 0 ? "/product" : index === 1 ? "/cart" : index === 2 ? "/checkout" : index === 3 ? "/coupon" : "/order"}
-                        onClick={() => setOpenNotification(false)} // Close dropdown when link is clicked
-                    >
-                        <div>
-                            {item.message}
+                    
+                <div className="icons">
+                <div className={`notification ${openNotification ? 'active' : ''}`}>
+                    <div className="icon" onClick={() => setOpenNotification(!openNotification)}>
+                        <img src={Notification} className="iconImg" alt="" />
+                        <div className="counter">{len}</div>
+                    </div>
+                    {/* Render notification dropdown based on openNotification state */}
+                    {openNotification &&  user._id && (
+                        <div className="notification-dropdown">
+                            {/* Map over the notification array and render each item's message */}
+                            {notification[0].map((item, index) => (
+                                <div key={item._id}>
+                                    <Link to={index === 0 ? "/product" : index === 1 ? "/cart" : index === 2 ? "/checkout" : index === 3 ? "/coupon" : "/order"}
+                                        onClick={() => setOpenNotification(false)} // Close dropdown when link is clicked
+                                    >
+                                        <div>
+                                            {item.message}
+                                        </div>
+                                    </Link>
+                                </div>
+                            ))}
+                            
+                            <div className="dynamicNotification">
+                                {dynamicNotification.length > 0 && (
+                                    <>
+                                        {dynamicNotification.map((item, index) => (
+                                            <h6 key={index} onClick={() => handleRemoveItem(index)}>{item}</h6>
+                                        ))}
+                                    </>
+                                )}
+                            </div>
                         </div>
-                    </Link>
+                    )}
                 </div>
-            ))}
-            
-            <div className="dynamicNotification">
-                {dynamicNotification.length > 0 && (
-                    <>
-                        {dynamicNotification.map((item, index) => (
-                            <h6 key={index} onClick={() => handleRemoveItem(index)}>{item}</h6>
-                        ))}
-                    </>
-                )}
-            </div>
-
-
-
-        </div>
-    )}
-</div>
 
 
                      {userId && (

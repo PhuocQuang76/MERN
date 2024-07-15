@@ -29,4 +29,4 @@ let userSchema = new schemaObj({
 
 let UserModel = mongooseObj.model("user", userSchema);//user - collection name, pluralised by mongodb
 
-module.exports = UserModel; // this can be used in router/s to access the mongoose model methods like select, update queries
+module.exports = UserModel; // this can be used in router/s to access the mongoose model methods like select, update queriesDCS XAZZCDRSCRZsxcxasCA1QA!QAAQAQ````

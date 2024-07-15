@@ -1,0 +1,13 @@
+.vaccineDetail h3{
+    color:beige;
+    font-style: italic;
+    font-size: x-large;
+    font-weight: 800;
+}
+
+.vaccineDetail h4{
+    color:beige;
+    font-style: italic;
+    font-size: large;
+    font-weight: 500;
+}
