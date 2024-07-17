@@ -40,6 +40,28 @@ export const getByStatusFromDB = (getStatusObj) => {
     }
 }
 
+export const handleDateTimeUpdate = (DateTimeUpdateObj) => {
+    const {userId, itemIndex,updateDate, updateTime,currentStatus} = DateTimeUpdateObj;
+    if (!DateTimeUpdateObj) {
+        console.log("getStatusObj is error...");
+        return;
+    }
+    return async (dispatch) => {
+        try {
+            const response = await axios.patch("http://localhost:9001/user/dateTimeUpdate",DateTimeUpdateObj);
+            console.log("items: " + response.data);
+            // calculatePriceQuantityTotal(response.data);
+            const fetchObj = {
+                "userId": userId,
+                "status": currentStatus,
+                "items":response.data
+            };
+            dispatch(RegisterActions.getByStatus(fetchObj));
+        } catch (error) {
+            console.error('Error fetching registered items from cart:', error);
+        }
+    }
+}
 
 
 export const handleGetAllRegisterByStatus = (status) => {
@@ -69,7 +91,13 @@ export const handleUpdateStatus = (updateStatusObj) => {
     return async (dispatch) => {
         try{
             const response = await axios.patch("http://localhost:9001/admin/statusUpdate",updateStatusObj);
-            handleGetAllRegisterByStatus(currentStatus);
+            
+            
+            let respondeObj = {
+                status:currentStatus,
+                items:response.data
+            }
+            dispatch(RegisterActions.getAllRegisterByStatus(respondeObj))
         }catch (error){
             console.error('Error updating status:', error);
         }

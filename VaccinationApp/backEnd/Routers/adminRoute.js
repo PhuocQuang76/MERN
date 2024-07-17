@@ -166,7 +166,7 @@ adminRouter.get("/getRegisteredByStatus/:status", async (req, res) => {
 adminRouter.patch('/statusUpdate',async (req,res) => {
    console.log("check");
     try{
-        const {userId, itemIndex, updateStatus} = req.body;
+        const {userId, itemIndex, updateStatus, currentStatus} = req.body;
         console.log("userId:"+userId);
         console.log("itemIndex:"+itemIndex);
         console.log("updateStatus:"+updateStatus);
@@ -183,7 +183,18 @@ adminRouter.patch('/statusUpdate',async (req,res) => {
         updateRegister.items[itemIndex] = updateItem;
 
         await updateRegister.save();
-        res.status(200).json(updateRegister);
+
+        //get all register by status
+        const registeredData = await registerDataModel.find();
+        const filteredItems = registeredData.reduce((acc, curr) => {
+            curr.items.forEach((item, index) => {
+                if (item.status === currentStatus) {
+                    acc.push({ _id: curr._id, userId: curr.userId, itemIndex: index, item });
+                }
+            });
+            return acc;
+        }, []);
+        res.status(200).json(filteredItems);
 
     }catch (error) {
         console.error(error);

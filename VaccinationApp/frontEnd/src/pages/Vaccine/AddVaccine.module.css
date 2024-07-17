@@ -1,7 +1,12 @@
-
-
+.addVaccine {
+    margin-left: 22%;
+}
+.addVaccine h2{
+   margin-left: 25%;
+    color:#ffab04;
+}
 .addVaccine form  label{
-    width: 120px;
+    width: 220px;
 
 }
 

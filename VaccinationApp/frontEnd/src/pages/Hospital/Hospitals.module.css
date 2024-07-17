@@ -1,6 +1,9 @@
-
+.hospitals{
+    
+}
 .hospitals h2{
     text-align: center;
+    color:#ffab04;
 }
 .hospitals ul{
     text-decoration: none;

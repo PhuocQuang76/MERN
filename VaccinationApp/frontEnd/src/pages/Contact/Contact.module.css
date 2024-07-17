@@ -1,3 +1,10 @@
+.contact{
+    margin: 5%;
+}
+.contact h2{
+    color:#ffab04;
+    margin-left: 40%;
+}
 .imageDiv{
     display: flex;
     justify-content: center;
@@ -8,6 +15,6 @@
     margin: auto; /* Center the image horizontally */
 }
 
-.contact{
+.contactInfo{
     text-align: center;
 }

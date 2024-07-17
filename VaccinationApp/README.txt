@@ -178,3 +178,5 @@ ovеrkill for simplе charting nееds.
 npm install nodemailer
 using Ethereal for testing email account (https://ethereal.email/)
 
+//pdf
+using html2canvas jspdf jspdf-autotable

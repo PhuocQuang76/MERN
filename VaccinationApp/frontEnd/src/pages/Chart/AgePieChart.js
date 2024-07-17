@@ -85,7 +85,7 @@ const AgePieChart = () => {
 
     return(
         <div className="agePieChart">
-            <h3>User Information base on age range</h3>
+            <h2>User Information base on age range</h2>
             <svg ref = {svgRef}>
 
             </svg>

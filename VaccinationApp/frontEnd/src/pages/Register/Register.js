@@ -136,7 +136,7 @@ const Register = () => {
                             status: "pending"
                         }
                     };
-                    
+
                     dispatch(addRegisterToDB(newItem));
 
 
@@ -173,9 +173,9 @@ const Register = () => {
 
     return (
         <div className={classes.userRegister}>
-            <h1>Register Vaccination Center</h1>
+            <h2>Register Vaccination Center</h2>
 
-            <h2>Select Vaccine</h2>
+            <h3>Select Vaccine</h3>
             {vaccines.map((vaccineItem) => (
                 <div key={vaccineItem._id}>
                     <input
@@ -188,7 +188,7 @@ const Register = () => {
                     <VaccineDetail vaccine={vaccineItem}/>
                 </div>
             ))}
-            <h2>Select Hospital</h2>
+            <h3>Select Hospital</h3>
             {hospitals.map((hospitalItem) => (
                 <div key={hospitalItem._id}>
                     <input

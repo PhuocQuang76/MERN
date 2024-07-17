@@ -34,123 +34,123 @@ module.exports = { generateToken };
 
 
 
-import React ,{useState,useRef, useEffect} from "react";
-import { handleUpdateStatus } from "../../store/Register/Register-actions";
-import { useDispatch } from "react-redux";
+// import React ,{useState,useRef, useEffect} from "react";
+// import { handleUpdateStatus } from "../../store/Register/Register-actions";
+// import { useDispatch } from "react-redux";
 
-const AllRegisterDetail = ({item}) => {
-    const dispatch = useDispatch();
-    const [isEditing, setIsEditing] = useState(false);
-    const [selectedUserId, setSelectedUserId] = useState(null);
-    const [selectedItemIndex, setSelectedItemIndex] = useState(null);
+// const AllRegisterDetail = ({item}) => {
+//     const dispatch = useDispatch();
+//     const [isEditing, setIsEditing] = useState(false);
+//     const [selectedUserId, setSelectedUserId] = useState(null);
+//     const [selectedItemIndex, setSelectedItemIndex] = useState(null);
    
 
 
-    const statusInputRef = useRef(null);
+//     const statusInputRef = useRef(null);
 
-    const handleEditClick = (userId, itemIndex) => {
-        setIsEditing(true);
-        setSelectedUserId(userId);
-        setSelectedItemIndex(itemIndex);
+//     const handleEditClick = (userId, itemIndex) => {
+//         setIsEditing(true);
+//         setSelectedUserId(userId);
+//         setSelectedItemIndex(itemIndex);
        
-    }
+//     }
 
-    const handleSaveClick = () => {
-        setIsEditing(false);
-        const updatedStatus = statusInputRef.current.value;
-        const statusUpdateObj = {
-            userId: selectedUserId,
-            itemIndex: selectedItemIndex,
-            status: updatedStatus
-        }
+//     const handleSaveClick = () => {
+//         setIsEditing(false);
+//         const updatedStatus = statusInputRef.current.value;
+//         const statusUpdateObj = {
+//             userId: selectedUserId,
+//             itemIndex: selectedItemIndex,
+//             status: updatedStatus
+//         }
         
-        // Add your logic to save the updated status
-        dispatch(handleUpdateStatus(statusUpdateObj));
+//         // Add your logic to save the updated status
+//         dispatch(handleUpdateStatus(statusUpdateObj));
         
-    }
+//     }
     
 
-    useEffect(()=>{
+//     useEffect(()=>{
 
-    },[isEditing])
-    return (
-        <>
-            <tr onClick={() => handleEditClick(item.userId, item.itemIndex)}>
-                <td>{item.userId}</td>
-                <td>{item.itemIndex}</td>
-                <td>{item.item.appointmentDate}</td>
-                <td>{item.item.appointmentTime}</td>
+//     },[isEditing])
+//     return (
+//         <>
+//             <tr onClick={() => handleEditClick(item.userId, item.itemIndex)}>
+//                 <td>{item.userId}</td>
+//                 <td>{item.itemIndex}</td>
+//                 <td>{item.item.appointmentDate}</td>
+//                 <td>{item.item.appointmentTime}</td>
    
-                <td>
-                    {item.item.vaccines && Array.isArray(item.item.vaccines) && (
-                        <table>
-                            <tbody>
-                                {item.item.vaccines.map((vaccineItem, index) => (
-                                    <tr key={index}>
-                                        <td>{vaccineItem.vaccine.name}</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    )}
-                </td>
+//                 <td>
+//                     {item.item.vaccines && Array.isArray(item.item.vaccines) && (
+//                         <table>
+//                             <tbody>
+//                                 {item.item.vaccines.map((vaccineItem, index) => (
+//                                     <tr key={index}>
+//                                         <td>{vaccineItem.vaccine.name}</td>
+//                                     </tr>
+//                                 ))}
+//                             </tbody>
+//                         </table>
+//                     )}
+//                 </td>
                     
-                <td>
-                    <table>
-                        <tbody>
-                            {item.item.vaccines && Array.isArray(item.item.vaccines) && 
-                                item.item.vaccines.map((vaccineItem, index) => (
-                                    <tr key={index}>
-                                        <td>{vaccineItem.vaccine.dose}</td>
-                                    </tr>
-                                ))
-                            }
-                        </tbody>
-                    </table>
-                </td>
+//                 <td>
+//                     <table>
+//                         <tbody>
+//                             {item.item.vaccines && Array.isArray(item.item.vaccines) && 
+//                                 item.item.vaccines.map((vaccineItem, index) => (
+//                                     <tr key={index}>
+//                                         <td>{vaccineItem.vaccine.dose}</td>
+//                                     </tr>
+//                                 ))
+//                             }
+//                         </tbody>
+//                     </table>
+//                 </td>
 
-                <td>{item.item.hospitals.name}</td>
-                <td>{item.item.hospitals.type}</td>
+//                 <td>{item.item.hospitals.name}</td>
+//                 <td>{item.item.hospitals.type}</td>
                    
-                <td>
-                    {
-                        isEditing?(
-                            <input 
-                            type="text" 
+//                 <td>
+//                     {
+//                         isEditing?(
+//                             <input 
+//                             type="text" 
                             
-                            ref={statusInputRef} 
-                        />
-                        ):(
-                            <span>{item.item.status}</span>
-                        )
-                    }
+//                             ref={statusInputRef} 
+//                         />
+//                         ):(
+//                             <span>{item.item.status}</span>
+//                         )
+//                     }
                     
                     
                     
                     
                     
-                </td>
+//                 </td>
                 
-                <td>
-                    {item.item.status === "pending" && (
-                        <>
-                            {   
-                                isEditing ? (
+//                 <td>
+//                     {item.item.status === "pending" && (
+//                         <>
+//                             {   
+//                                 isEditing ? (
                                     
-                                    <button onClick={handleSaveClick}>Save</button>
+//                                     <button onClick={handleSaveClick}>Save</button>
                                     
-                                ) : (
-                                    <button onClick={() => handleEditClick(item.userId, item.itemIndex)}>Edit</button>
-                                )
-                            }
-                        </>
+//                                 ) : (
+//                                     <button onClick={() => handleEditClick(item.userId, item.itemIndex)}>Edit</button>
+//                                 )
+//                             }
+//                         </>
                        
-                    )}
-                </td>
+//                     )}
+//                 </td>
                
-            </tr>
-        </>
-    );
-}
+//             </tr>
+//         </>
+//     );
+// }
 
-export default AllRegisterDetail;
+// export default AllRegisterDetail;

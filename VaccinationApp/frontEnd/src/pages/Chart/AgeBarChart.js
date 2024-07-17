@@ -31,8 +31,8 @@ function AgeBarChart() {
             .attr('height',h)
             .style('overflow','visible')
             .style('margin-top','75px')
-            .style('color', 'rgb(81, 90, 80')
-            .attr('fill', 'steelblue'); // Set the color of the bars here; 
+            .style('color', 'bisque')
+            .attr('fill', 'bisque'); // Set the color of the bars here; 
 
      
 
@@ -109,8 +109,8 @@ function AgeBarChart() {
     },[dispatch]);
 
     return(
-        <div style={{width: '100%', minHeight: '100px'}} className="chart">
-            <h3>User Information base on age range</h3>
+        <div style={{width: '100%', minHeight: '100px'}} className="ageBarChart">
+            <h2>User Information base on age range</h2>
             <svg ref = {svgRef}>
 
             </svg>

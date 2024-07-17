@@ -16,6 +16,7 @@ export const addUser = (userObj) => {
             const signupUser = response.data;
             console.log("Signup User:", signupUser);
             // Dispatch an action from your auth slice to update the Redux store with the signup user data
+           
             dispatch(authActions.addUserToStore(signupUser));
         } catch (error) {
             if (error.response) {

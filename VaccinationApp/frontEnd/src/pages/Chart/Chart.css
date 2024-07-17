@@ -1,19 +1,62 @@
-.chart{
-    margin-left: 10%;
-    margin-bottom: 5%;
-    color:rgb(62, 65, 138);
+.chartService{
+    margin:5%;
+    /* margin-bottom: 5%;
+    color:rgb(62, 65, 138); */
     
+}
+.chartService h2{ 
+    color:#ffab04;
+}
+
+
+.ageBarChart{
+    margin: 5%;
+}
+
+.ageBarChart h2{
+    color:#ffab04;
 }
 
 .agePieChart{
-    margin-left: 50%;
+    margin: 5%;
 }
 
-.chart h3{
-    color:rgb(221, 221, 125)
+.agePieChart h2{
+    color:#ffab04;
 }
-.agePieChart h3{
-    color:rgb(221, 221, 125);
-    margin-left: -200px;
-    margin-top: 5%;
+
+.agePieChart svg{
+    margin-left: 15%;
+}
+
+.genderBarchart{
+    margin: 5%;
+}
+
+.genderBarchart h2{
+    color:#ffab04;
+}
+
+
+.genderPieChart{
+    margin: 5%;
+}
+
+.genderPieChart h2{
+    color:#ffab04;
+}
+
+.genderPieChart svg{
+    margin-left: 15%;
+}
+
+
+h1{
+    color:bisque
+}
+
+.chartLinks{
+    display: flex;
+    flex-direction: column;
+    
 }

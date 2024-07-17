@@ -16,8 +16,8 @@ function GenderBarChart() {
     const { age10, age20, age30, age40, age50, age60, age70, age80, age90, age100, ageOther,maleNum,femaleNum } = reportVals;
     
     const totalUser = maleNum + femaleNum;
-    const malePercent = (maleNum /totalUser) * 100;
-    const femalePercent = (femaleNum /totalUser) * 100;
+    const malePercent = ((maleNum /totalUser) * 100).toFixed(2);
+    const femalePercent = ((femaleNum /totalUser) * 100).toFixed(2);
     const data = [malePercent,femalePercent];
     // const data = [2,4,0,1,5,6,7,2,1,0,0]
     // Calculate the maximum value in the data array
@@ -33,8 +33,8 @@ function GenderBarChart() {
         .attr('height',h)
         .style('overflow','visible')
         .style('margin-top','75px')
-        .style('color', 'rgb(81, 90, 80')
-        .attr('fill', 'steelblue'); // Set the color of the bars here; 
+        .style('color', 'bisque')
+        .attr('fill', 'bisque'); // Set the color of the bars here; 
 
      
 
@@ -76,14 +76,14 @@ function GenderBarChart() {
             .attr('x', -h / 2)
             .attr('y', -50)
             .style('text-anchor', 'middle')
-            .text('Number of users');
+            .text('Gender percentage');
 
         // Add label for xAxis
         svg.append('text')
             .attr('x', w / 2)
             .attr('y', h + 50)
             .style('text-anchor', 'middle')
-            .text('Age range');
+            .text('genders');
 
         // Add title for the chart
         svg.append('text')
@@ -91,7 +91,7 @@ function GenderBarChart() {
             .attr('y', -20)
             .style('text-anchor', 'middle')
             .style('font-size', '20px')
-            .text('Age range Chart');
+            .text('Gender Percent Chart');
 
 
         //Setting up svg data
@@ -114,7 +114,7 @@ svg.selectAll("rect")
 .attr("y", d => yScale(d))
 .attr("width", 110)
 .attr("height", d => h - yScale(d))
-.attr("fill", "red")
+.attr("fill", "bisque")
 // Add a class for styling if needed
 
 // Add labels for each rectangle
@@ -126,15 +126,15 @@ svg.selectAll(".bar-label")
     .attr("x", (d, i) => i === 0 ? 110 : i === 1 ? 280 : xScale(data[i]) + xScale.bandwidth()) // Set x position based on index
     .attr("y", d => yScale(d) - 5) // Adjust the y position for better visibility
     .attr("text-anchor", "middle")
-    .style("fill", "red")
+    .style("fill", "bisque")
     .attr("class", "bar-label");
     
 
     },[dispatch]);
 
     return(
-        <div className="chart">
-            <h3>User Information base on age range</h3>
+        <div className="genderBarchart">
+            <h2>User Information base on gender</h2>
             <svg ref = {svgRef}>
 
             </svg>

@@ -1,9 +1,14 @@
 .form {
+  margin: 5%;
     max-width: 40rem;
     margin: 2rem auto;
   }
   
+  .form h2 {
+    color:#ffab04;
+  }
   .form label,
+
   .form input,
   .form textarea {
     display: block;

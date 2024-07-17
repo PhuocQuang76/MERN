@@ -11,19 +11,19 @@ const UserInfo = () => {
     const user = useSelector((store)=> store.auth.user);
 
     return(
-        <div>
-            <h3>User Information</h3>
+        <div className={classes.userInfo}>
+            <h2>User Information</h2>
             <div>
-                <p><span className={classes.spanText}>UsreId:</span>: {user._id}</p>
+                <p><span className={classes.spanText}>UserId:</span>: {user._id}</p>
                 <p><span className={classes.spanText}>FirstName:</span>: {user.firstName}</p>
                 <p><span className={classes.spanText}>LastName:</span>: {user.lastName}</p>
                 <p><span className={classes.spanText}>Age:</span>: {user.age}</p>
                 <p><span className={classes.spanText}>Gender:</span>: {user.gender}</p>
                 <p><span className={classes.spanText}>Profession:</span>: {user.profession}</p>
-                <p><span className={classes.spanText}>Emamil:</span>: {user.email}</p>
+                <p><span className={classes.spanText}>Email:</span>: {user.email}</p>
                 <p><span className={classes.spanText}>Password:</span>: {user.password}</p>
             </div>
-
+            <hr></hr>
         </div>
     )
 }

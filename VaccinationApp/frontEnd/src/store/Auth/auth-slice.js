@@ -19,9 +19,11 @@ const authSlice = createSlice({
             return{...state, user:action.payload}
         },
 
+       
         fetchUserToStore(state, action){
             return{...state,
-                users:action.payload
+                users:action.payload,
+                isSignUpSuccess:true
             }
         },
 

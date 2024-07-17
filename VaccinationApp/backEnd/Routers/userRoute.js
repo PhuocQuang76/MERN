@@ -71,6 +71,55 @@ userRouter.get('/getByStatus/:userId/:status', async (req, res) => {
     }
 });
 
+
+userRouter.patch('/dateTimeUpdate',async (req,res) => {
+    console.log("check");
+     try{
+         const {userId, itemIndex, updateDate, updateTime, currentStatus} = req.body;
+         console.log("userId:"+userId);
+         console.log("itemIndex:"+itemIndex);
+         console.log("updateDate:"+updateDate);
+ 
+         const updateRegister = await RegisterDataModel.findOne({userId});
+ 
+         if (!updateRegister) {
+             return res.status(404).json({ error: 'Not found the register' });
+         }
+ 
+         const updateItem = updateRegister.items[itemIndex];
+         updateItem.appointmentDate = updateDate;
+         updateItem.appointmentTime = updateTime;
+ 
+         updateRegister.items[itemIndex] = updateItem;
+ 
+         await updateRegister.save();
+
+
+         //get all register by status
+        const registeredData = await RegisterDataModel.find({ userId }); // Use find instead of findOne
+        if (!registeredData || registeredData.length === 0) {
+            res.status(404).json({ error: 'Cart not found' });
+        } else {
+            const filteredItems = registeredData.reduce((acc, curr) => {
+                curr.items.forEach((item, index) => {
+                    if (item.status === currentStatus) {
+                        acc.push({ _id: curr._id, itemIndex: index, item });
+                    }
+                });
+                return acc;
+            }, []);
+            console.log("filteredItems:" + filteredItems);
+            res.json(filteredItems);
+        }
+
+        
+ 
+     }catch (error) {
+         console.error(error);
+         res.status(500).json({ error: 'Internal server error' });
+     }
+ });
+
 // userRouter.get('/getByStatus/:userId/:status', async(req,res)=> {
 //     const status = req.params.status;
 //     console.log(status);

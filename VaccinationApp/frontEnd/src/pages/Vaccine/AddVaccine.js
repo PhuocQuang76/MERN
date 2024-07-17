@@ -75,7 +75,7 @@ const dispatch = useDispatch();
                     <textarea  id="description" type="text" name="description" required ref={descriptionRef} />
                 </div>
                 <div >
-                    <label htmlFor="age">Age (Separate multiple ages by commas)</label>
+                    <label htmlFor="age">Age <span>(Separate multiple ages by commas)</span></label>
                     <input id="age" type="text" name="age" required ref={ageRef} />
                 </div>
 

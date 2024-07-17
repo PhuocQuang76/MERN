@@ -57,43 +57,42 @@ const AddHospital = () => {
                     <input  id="address" name="address" required ref={addressRef} />
                 </div>
                 
+                <div>
+                    <label htmlFor="charge">Charge</label>
+                    <input id="charge" type="number" name="charge" required ref={chargeRef} />
+                </div>
                 
                 <div>
+                    <label htmlFor="type">Type</label>
                     
-                <div className={classes.radioContainer}>
-                    <input 
-                        type="radio" 
-                        value="government" 
-                        checked={selectedGovernment === 'government'} 
-                        onChange={handleGovermentChange}    
-                    />
-                    <p>Government</p>
-                </div>
-
-                
-
+                    <div className={classes.radioContainer}>
+                        <input 
+                            type="radio" 
+                            value="government" 
+                            checked={selectedGovernment === 'government'} 
+                            onChange={handleGovermentChange}    
+                        />
+                        <p>Government</p>
+                    </div>
                     <div className={classes.radioContainer} id="lastRadio">
                         <input 
                             type="radio" 
                             value="private" 
                             checked={selectedGovernment === 'private'} 
                             onChange={handleGovermentChange} 
-                        
                         />
                         <p>Private</p>
                     </div>
-
                 </div>
+
+                
                 
 
-                <div >
-                    <label htmlFor="charge">Charge</label>
-                    <input id="charge" type="number" name="charge" required ref={chargeRef} />
-                </div>
+                
                 
                 <br></br>
-                <div className="form-group">
-                    <button type="button" className="btn btn-secondary">Cancel</button>
+                <div className={classes.buttons}>
+                    <button type="button" className="btn btn-primary">Cancel</button>
                     <button type="submit" className="btn btn-primary">Add</button>
                 </div>
 

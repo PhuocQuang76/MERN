@@ -69,7 +69,15 @@ export const handleUpdateStatus = (updateStatusObj) => {
     return async (dispatch) => {
         try{
             const response = await axios.patch("http://localhost:9001/admin/statusUpdate",updateStatusObj);
-            handleGetAllRegisterByStatus(currentStatus);
+            
+            const RegisterByStatusObj = {
+                "items":response.data,
+                "status":currentStatus
+            }
+
+            
+            
+            dispatch(AllRegisterActions.getAllRegisterByStatus(RegisterByStatusObj));
         }catch (error){
             console.error('Error updating status:', error);
         }

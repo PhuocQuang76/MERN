@@ -32,8 +32,9 @@ const AllRegisterDetail = ({item}) => {
         }
         
         // Add your logic to save the updated status
-        dispatch(handleUpdateStatus(statusUpdateObj));
         setIsEditing(false);
+        dispatch(handleUpdateStatus(statusUpdateObj));
+        
     }
     
 
@@ -95,10 +96,10 @@ const AllRegisterDetail = ({item}) => {
                             {   
                                 isEditing ? (
                                     
-                                    <button onClick={handleSaveClick}>Save</button>
+                                    <button className="btn btn-primary" onClick={handleSaveClick}>Save</button>
                                     
                                 ) : (
-                                    <button onClick={() => handleEditClick(item.userId, item.itemIndex)}>Edit</button>
+                                    <button className="btn btn-primary" onClick={() => handleEditClick(item.userId, item.itemIndex)}>Edit</button>
                                 )
                             }
                         </>

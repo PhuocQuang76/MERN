@@ -12,8 +12,8 @@ const GenderPieChart = () => {
     const reportVals = useSelector((state) => state.report.reportValues);
     const { age10, age20, age30, age40, age50, age60, age70, age80, age90, age100, ageOther,maleNum,femaleNum } = reportVals;
     const totalUser = maleNum + femaleNum;
-    const malePercent = (maleNum /totalUser) * 100;
-    const femalePercent = (femaleNum /totalUser) * 100;
+    const malePercent = ((maleNum / totalUser) * 100).toFixed(2);
+    const femalePercent = ((femaleNum / totalUser) * 100).toFixed(2);
     
     const data = [
         { value: malePercent,property:'male'},
@@ -77,12 +77,12 @@ const GenderPieChart = () => {
         .style('text-anchor', 'middle')
         .style('font-size', '20px')
         .style('fill', 'hsl(60, 50%, 39%)') // Set the fill color to blue
-        .text('Age range Chart');
+        .text('Gender Percent Chart');
     }, [dispatch]);
 
     return(
-        <div className="agePieChart">
-            <h3>User Information base on age range</h3>
+        <div className="genderPieChart">
+            <h2>User Information base on gender</h2>
             <svg ref = {svgRef}>
 
             </svg>

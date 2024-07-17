@@ -19,8 +19,8 @@ import HospitalDetail from "./pages/Hospital/HospitalDetail";
 import AddDisplayHospital from "./pages/Hospital/AddDisplayHospital";
 
 import Register from "./pages/Register/Register";
-import Registers from "./pages/Register/Registers";
-import RegisterDetail from "./pages/Register/RegisterDetail";
+import Registers from "./pages/MyProfile/Registers";
+import RegisterDetail from "./pages/MyProfile/RegisterDetail";
 
 import UserList from "./pages/Admin/UserList";
 import AllRegister from "./pages/Admin/AllRegister";

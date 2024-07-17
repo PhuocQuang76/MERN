@@ -53,7 +53,9 @@ let Header = (props) => {
                     <div className="navLink">
                         <ul className="navItems">
                             {navItems.map((item) => {
-                                if (item.title === "Admin") {
+                                if (userFirstName !== "admin" && item.title === "Admin") {
+                                    return null; // hide the "Admin" item if user is not admin
+                                } else if (item.title === "Admin" && userFirstName === "admin") {
                                     return (
                                         <li
                                             key={item.id}

@@ -36,16 +36,16 @@ const MyOrderItem = (props) => {
 
 
    const handleSaveClick = () => {
-    const updatedQuantity = quantityInputRef.current.value;
-    const quantityUpdateObj = {
-        userId: userId,
-        productId: productId,
-        updatedQuantity: updatedQuantity,
-        status: status
+        const updatedQuantity = quantityInputRef.current.value;
+        const quantityUpdateObj = {
+            userId: userId,
+            productId: productId,
+            updatedQuantity: updatedQuantity,
+            status: status
+        }
+        dispatch(updateQuantity(quantityUpdateObj));
+        setIsEditing(false);
     }
-    dispatch(updateQuantity(quantityUpdateObj));
-    setIsEditing(false);
-}
 
     const handleEditClick = () => {
         setIsEditing(true);

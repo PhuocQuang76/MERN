@@ -6,18 +6,22 @@
 
 
 .userRegister h2{
-    color:rgb(219, 157, 81)
+    color:#ffab04;
+}
+
+.userRegister h3{
+    color:beige;
 }
 
 .amount{
     margin: auto;
     background-color: rgb(51, 49, 49);
-    color:antiquewhite;
+    color:#ffab04;
     width:50%;
     text-align: center;
     font-size:medium;
 }
 .amount h3{
-    color:rgb(211, 139, 51);
+    color:beige;
     font-size: large;
 }

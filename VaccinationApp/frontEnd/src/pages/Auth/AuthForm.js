@@ -14,6 +14,7 @@ function AuthForm() {
 
     const isLoginSuccess = useSelector((store)=> store.auth.isLoginSuccess);
     
+    
     const [searchParams] = useSearchParams();
     // const isLogin = searchParams.get('mode') === 'login';
     const [isLogin, setIsLogin] = useState(true);
@@ -49,9 +50,7 @@ function AuthForm() {
                 password: password
             }
             dispatch(login(userObj));
-            // if(!errors){
-            //     navigate('/home');
-            // }
+            
             
         } else {
             const firstName = firstNameRef.current ? firstNameRef.current.value : '';
@@ -70,18 +69,33 @@ function AuthForm() {
                 password: password
             }
             dispatch(addUser(newUserObj));
-            navigate('/auth/login');
+            if (!errors || Object.keys(errors).length === 0) {
+                alert("User successfully signed up.");
+                setIsLogin(true);
+                navigate('/auth/login?mode=login');
+            }
+            
+            
         }
-    }
+        // Reset the form after successful login or signup
+        // Reset the form fields
+        emailRef.current.value = '';
+        passwordRef.current.value = '';
+        if (firstNameRef.current) firstNameRef.current.value = '';
+        if (lastNameRef.current) lastNameRef.current.value = '';
+        if (ageRef.current) ageRef.current.value = '';
+        if (professionRef.current) professionRef.current.value = '';
+        if (diseaseRef.current) diseaseRef.current.value = '';
+        }
 
 
     useEffect(() => {
         if (isLoginSuccess) {
             navigate('/home');
         }
+       
+
     }, [isLoginSuccess, errors]);
-
-
 
 return (
     <>
@@ -91,7 +105,7 @@ return (
         )}
 
         <form method="post" className={classes.form}>
-            <h1>{isLogin ? 'Log in' : 'Create a new user'}</h1>
+            <h2>{isLogin ? 'Log in' : 'Create a new user'}</h2>
            
 
             {!isLogin && (
@@ -174,10 +188,7 @@ return (
             <button onClick={handleSave}>
                 Save
             </button> 
-
-
-
-                    
+        
             </div>
         </form>
     </>
